@@ -6,24 +6,19 @@
                 :direction="'vertical'"
                 :slides-per-view="1"
                 :space-between="0"
-                :speed="800"
+                :speed="400"
                 :mousewheel="true"
                 :autoHeight="true"
-                :parallax="true"
+                :pagination="{
+                    clickable: true,
+                }"
                 @swiper="onSwiper"
                 @slideChange="onSlideChange"
             >
-                <div
-                    slot="container-start"
-                    class="parallax-bg"
-                    :style="{
-                        'background-image':
-                            'url(https://swiperjs.com/demos/images/nature-1.jpg)',
-                    }"
-                    data-swiper-parallax="-23%"
-                ></div>
                 <swiper-slide>
-                    <div class="bg-[#009E5C] h-screen w-screen relative -z-10">
+                    <div
+                        class="bg-[#009E5C] h-screen w-screen relative -z-10 flex items-center justify-center"
+                    >
                         <div
                             class="w-full h-full backLuup absolute top-0 left-0"
                         ></div>
@@ -37,6 +32,21 @@
                         <div
                             class="w-full h-full backLuup2 absolute top-0 left-0"
                         ></div>
+                        <div
+                            class="text-8xl font-blackops relative text-white font-extrabold max-w-[500px]"
+                        >
+                            <span>SportOrigin Fest</span>
+                            <div
+                                class="h-[70px] w-[8px] bg-white inline-block m-4 -mb-[2px]"
+                            ></div>
+                            <div class="inline-block text-xl -mb-4">
+                                <p class="">
+                                    главные <br />
+                                    мероприятия <br />
+                                    года
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </swiper-slide>
                 <swiper-slide>
@@ -52,16 +62,17 @@
 
 <script lang="ts">
 import { ref, defineComponent } from "vue";
-import { Thumbs, Mousewheel, Parallax } from "swiper/modules";
+import { Thumbs, Mousewheel, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/vue";
 
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/pagination";
 export default defineComponent({
     data() {},
     setup() {
         return {
-            modules: [Mousewheel, Parallax],
+            modules: [Mousewheel, Pagination],
         };
     },
     components: {
@@ -80,6 +91,9 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.swiper-pagination-bullet {
+    background: #fff;
+}
 .swiper-slide {
     height: auto !important;
 }

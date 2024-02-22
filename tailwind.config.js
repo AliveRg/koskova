@@ -11,7 +11,8 @@ module.exports = {
             fontFamily: {
                 sans: ["Graphik", "sans-serif"],
                 serif: ["Merriweather", "serif"],
-                origin: ["Montserrat", "italic"],
+                montserrat: ["Montserrat", "italic"],
+                blackops: ["Black Ops One", "italic"],
             },
         },
     },
