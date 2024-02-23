@@ -48,7 +48,7 @@
                 </div>
             </div>
             <button
-                class="uppercase font-montserrat font-bold text-2xl rounded-[40px] border-solid border-[1px] border-white py-[15px] px-[50px] relative text-white md:hover:bg-white active:bg-white lg:hover:text-[#FFC64F] active:text-[#FFC64F] transition-all"
+                class="uppercase font-montserrat font-bold text-2xl rounded-[40px] border-solid border-[1px] border-white py-[15px] px-[50px] relative text-white md:hover:bg-white md:hover:text-[#FFC64F] active:text-[#FFC64F] active:bg-white transition-all"
                 type="button"
             >
                 забронировать билет
