@@ -56,12 +56,12 @@
                     </p>
                 </div>
             </div>
-            <button
+            <router-link
+                to="/about"
                 class="uppercase font-montserrat font-bold text-lg md:text-2xl rounded-[40px] border-solid border-[1px] border-white py-[10px] px-[30px] md:py-[15px] md:px-[50px] relative text-white md:hover:bg-white md:hover:text-[#FFC64F] active:text-[#FFC64F] active:bg-white transition-all"
-                type="button"
             >
                 забронировать билет
-            </button>
+            </router-link>
         </div>
         <div class="">
             <div
@@ -477,21 +477,22 @@
                     class="w-full grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-8"
                 >
                     <div
-                        v-for="item in 4"
-                        :key="item"
+                        v-for="item in tickers"
+                        :key="item.id"
                         class="w-full bg-white flex relative rounded-lg"
                     >
                         <div
                             class="uppercase w-2/3 flex flex-col items-center font-montserrat font-medium text-black p-[15px] border-dashed border-r-2 border-r-slate-300"
                         >
                             <p class="text-start w-full pb-[30px]">
-                                2 ИЮНЯ / ДЮРСО
+                                {{ item.date }} / {{ item.map }}
                             </p>
                             <p class="text-[24px] text-center w-full">
-                                БАЗОВЫЙ <br />одно мероприятие
+                                {{ item.tarif }} <br />{{ item.numEvent }}
                             </p>
                             <p class="text-[9px] text-center w-full">
-                                МЕСТО-СТАНДАРТ / бесплатные напитки / 1 КВЕСТ
+                                МЕСТО-{{ item.plase }} / бесплатные напитки / 1
+                                КВЕСТ
                             </p>
                         </div>
                         <div
@@ -504,34 +505,17 @@
                                 buy ticket
                             </button>
                             <p class="text-[9px] font-montserrat text-black">
-                                ДО 30.05 — 1 000 ₽
+                                За 30 дней — {{ item.price[0] }} ₽
                             </p>
                             <p class="text-[9px] font-montserrat text-black/50">
-                                ДО 15.06 — 1 500 ₽
+                                За 20 дней — {{ item.price[1] }} ₽
                             </p>
                             <p class="text-[9px] font-montserrat text-black/30">
-                                ДО 2.07 — 2 000 ₽
+                                За 10 дней — {{ item.price[2] }} ₽
                             </p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div
-            class="min-h-screen bg-[#1F1F1F] p-[8px] pb-[60px] md:p-[40px] lg:p-[80px] flex relative"
-        >
-            <div
-                class="container mx-auto flex items-start justify-start relative"
-            >
-                <!-- Левая сторона с информацией -->
-                <div class="text-secondary w-1/3 flex flex-col gap-8">
-                    <p
-                        class="uppercase text-[80px] font-montserrat font-extrabold text-white tracking-wider"
-                    >
-                        КОНТАКТЫ
-                    </p>
-                </div>
-                <!-- Правая сторона с картинкой -->
             </div>
         </div>
     </div>
@@ -552,6 +536,44 @@ export default defineComponent({
             FreeMode: false,
             card: [false, false, false, false, false, false],
             btn: [false, false, false, false, false, false],
+            tickers: [
+                {
+                    id: 1,
+                    date: "02.09.2024",
+                    map: "шанхай",
+                    tarif: "Базовый",
+                    plase: "Стандарт",
+                    numEvent: "одно мероприятие",
+                    price: [1000, 1500, 2000],
+                },
+                {
+                    id: 2,
+                    date: "02.09.2024",
+                    map: "шанхай",
+                    tarif: "полный",
+                    plase: "VIP",
+                    numEvent: "два мероприятия",
+                    price: [2000, 2500, 3000],
+                },
+                {
+                    id: 3,
+                    date: "22.04.2024",
+                    map: "дюрсо",
+                    tarif: "Базовый",
+                    plase: "Стандарт",
+                    numEvent: "одно мероприятие",
+                    price: [1000, 1500, 2000],
+                },
+                {
+                    id: 4,
+                    date: "22.04.2024",
+                    map: "дюрсо",
+                    tarif: "полный",
+                    plase: "VIP",
+                    numEvent: "два мероприятия",
+                    price: [2000, 2500, 3000],
+                },
+            ],
         };
     },
     setup() {
