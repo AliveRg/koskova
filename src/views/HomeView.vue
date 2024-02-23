@@ -175,7 +175,7 @@
                 <!-- Картинка 1 -->
                 <div class="relative flex flex-col items-center group">
                     <div
-                        class="galary rotate-[2deg] group-hover:rotate-0 group-hover:backdrop-brightness-50 w-[200px] h-[200px] bg-[url('https://i.pinimg.com/564x/bb/b4/43/bbb443b10b6605db1ec9beec3c536ae0.jpg')]"
+                        class="galary rotate-[2deg] group-hover:rotate-0 group-hover:backdrop-brightness-50 w-full h-[200px] bg-[url('https://i.pinimg.com/564x/bb/b4/43/bbb443b10b6605db1ec9beec3c536ae0.jpg')]"
                     >
                         <div
                             class="group-hover:flex hidden text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
@@ -210,7 +210,7 @@
                 <!-- Картинка 2 -->
                 <div class="relative flex flex-col items-center group">
                     <div
-                        class="galary rotate-[2deg] group-hover:rotate-0 group-hover:backdrop-brightness-50 w-[200px] h-[200px] bg-[url('https://i.pinimg.com/564x/2e/f7/c7/2ef7c7d16d76622d83e3e4152f07a426.jpg')]"
+                        class="galary rotate-[2deg] group-hover:rotate-0 group-hover:backdrop-brightness-50 w-full h-[200px] bg-[url('https://i.pinimg.com/564x/2e/f7/c7/2ef7c7d16d76622d83e3e4152f07a426.jpg')]"
                     >
                         <div
                             class="group-hover:flex hidden text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
@@ -246,7 +246,7 @@
                 <!-- Картинка 3 -->
                 <div class="relative flex flex-col items-center group">
                     <div
-                        class="galary rotate-[2deg] group-hover:rotate-0 group-hover:backdrop-brightness-50 w-[200px] h-[200px] bg-[url('https://i.pinimg.com/564x/c1/d3/de/c1d3deb897eec2a9eb33a5741b8b4844.jpg')]"
+                        class="galary rotate-[2deg] group-hover:rotate-0 group-hover:backdrop-brightness-50 w-full h-[200px] bg-[url('https://i.pinimg.com/564x/c1/d3/de/c1d3deb897eec2a9eb33a5741b8b4844.jpg')]"
                     >
                         <div
                             class="group-hover:flex hidden text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
