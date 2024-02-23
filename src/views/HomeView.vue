@@ -1,5 +1,14 @@
 <template>
     <div>
+        <div
+            class="w-full h-[40px] bg-black flex items-center justify-evenly py-[4px] px-[10px] sticky top-0 z-[100]"
+        >
+            <div class="text-white text-lg font-blackops font-bold">lorem</div>
+            <div class="text-white text-lg font-blackops font-bold">lorem</div>
+            <div class="text-white text-lg font-blackops font-bold">lorem</div>
+            <div class="text-white text-lg font-blackops font-bold">lorem</div>
+            <div class="text-white text-lg font-blackops font-bold">lorem</div>
+        </div>
         <!-- <swiper
                 :modules="modules"
                 :direction="'vertical'"
@@ -54,288 +63,360 @@
                 забронировать билет
             </button>
         </div>
-        <div
-            class="bg-[#FFC64F] p-[8px] pb-[60px] md:p-[40px] lg:p-[80px] flex flex-col gap-[80px]"
-        >
-            <h2
-                class="text-white font-extrabold font-blackops text-6xl md:text-8xl pt-[40px] md:pt-[80px]"
-            >
-                TOP
-                <span class="font-montserrat text-4xl md:text-6xl">
-                    мероприятий за месяц</span
-                >
-            </h2>
+        <div class="">
             <div
-                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 md:gap-8"
+                class="bg-[#FFC64F] p-[8px] pb-[60px] md:p-[40px] lg:p-[80px] flex flex-col gap-[80px]"
             >
+                <h2
+                    class="text-white font-extrabold font-blackops text-6xl md:text-8xl pt-[40px] md:pt-[80px]"
+                >
+                    TOP
+                    <span class="font-montserrat text-4xl md:text-6xl">
+                        мероприятий за
+                        <span class="text-[#009E5C]">месяц</span></span
+                    >
+                </h2>
                 <div
-                    class="relative"
-                    @mouseenter="visibleInf(1)"
-                    @mouseleave="visibleInf(1)"
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 md:gap-8"
                 >
                     <div
-                        class="galary h-[400px] bg-[url('https://i.pinimg.com/564x/28/4e/42/284e42dbed7609a3973822562334c85a.jpg')]"
-                        :class="
-                            card[1]
-                                ? 'rotate-[1deg] backdrop-brightness-30'
-                                : 'rotate-[0deg]'
-                        "
+                        class="relative"
+                        @mouseenter="visibleInf(1)"
+                        @mouseleave="visibleInf(1)"
                     >
                         <div
-                            class="text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
-                            :class="card[1] ? 'flex' : 'flex md:hidden'"
+                            class="galary h-[400px] bg-[url('https://i.pinimg.com/564x/28/4e/42/284e42dbed7609a3973822562334c85a.jpg')]"
+                            :class="
+                                card[1]
+                                    ? 'rotate-[1deg] backdrop-brightness-30'
+                                    : 'rotate-[0deg]'
+                            "
                         >
-                            <p class="font-blackops text-5xl text-white">
-                                22
-                                <span class="font-montserrat font-bold"
-                                    >июня</span
-                                >
-                                <br />
-                                <span class="text-[#FFC64F]">22:00</span>
-                            </p>
-                            <button
-                                type="button"
-                                class="font-montserrat font-bold text-5xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
+                            <div
+                                class="text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
+                                :class="card[1] ? 'flex' : 'flex md:hidden'"
                             >
-                                Подробнее
-                            </button>
+                                <p class="font-blackops text-5xl text-white">
+                                    22
+                                    <span class="font-montserrat font-bold"
+                                        >июня</span
+                                    >
+                                    <br />
+                                    <span class="text-[#FFC64F]">22:00</span>
+                                </p>
+                                <button
+                                    @click="btnAct(1)"
+                                    :class="
+                                        btn[1] ? 'bg-white text-[#FFC64F]' : ''
+                                    "
+                                    type="button"
+                                    class="font-montserrat font-bold text-5xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
+                                >
+                                    Подробнее
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute -bottom-10 left-0 right-0 py-2 px-4"
+                        >
+                            <p
+                                class="text-[#fff] tont-montserrat text-5xl font-bold rotate-[3deg] text-center group-hover:rotate-[0deg] origin-bottom-left"
+                            >
+                                Скорость <br />
+                                В формуле 1
+                            </p>
                         </div>
                     </div>
-                    <div class="absolute -bottom-10 left-0 right-0 py-2 px-4">
-                        <p
-                            class="text-[#fff] tont-montserrat text-5xl font-bold rotate-[3deg] text-center group-hover:rotate-[0deg] origin-bottom-left"
+                    <div
+                        class="relative"
+                        @mouseenter="visibleInf(2)"
+                        @mouseleave="visibleInf(2)"
+                    >
+                        <div
+                            class="galary h-[400px] bg-[url('https://i.pinimg.com/564x/11/dc/09/11dc09c6ef7b9d3d34ff94f8adb3883b.jpg')]"
+                            :class="
+                                card[2]
+                                    ? 'rotate-[1deg] backdrop-brightness-30'
+                                    : 'rotate-[0deg]'
+                            "
                         >
-                            Скорость <br />
-                            В формуле 1
-                        </p>
+                            <div
+                                class="text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
+                                :class="card[2] ? 'flex' : 'flex md:hidden'"
+                            >
+                                <p class="font-blackops text-5xl text-white">
+                                    22
+                                    <span class="font-montserrat font-bold"
+                                        >июня</span
+                                    >
+                                    <br />
+                                    <span class="text-[#FFC64F]">22:00</span>
+                                </p>
+                                <button
+                                    @click="btnAct(2)"
+                                    :class="
+                                        btn[2] ? 'bg-white text-[#FFC64F]' : ''
+                                    "
+                                    type="button"
+                                    class="font-montserrat font-bold text-5xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
+                                >
+                                    Подробнее
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute -bottom-10 left-0 right-0 py-2 px-4"
+                        >
+                            <p
+                                class="text-[#fff] font-montserrat text-5xl font-bold rotate-[0deg] text-center group-hover:rotate-[5deg] origin-bottom-left"
+                            >
+                                Битвы <br />
+                                Танцев
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="relative"
+                        @mouseenter="visibleInf(3)"
+                        @mouseleave="visibleInf(3)"
+                    >
+                        <div
+                            class="galary h-[400px] bg-[url('https://i.pinimg.com/736x/44/b4/ec/44b4ecdb943d36c2b1087f2fde2e3fb7.jpg')]"
+                            :class="
+                                card[3]
+                                    ? 'rotate-[1deg] backdrop-brightness-30'
+                                    : 'rotate-[0deg]'
+                            "
+                        >
+                            <div
+                                class="text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
+                                :class="card[3] ? 'flex' : 'flex md:hidden'"
+                            >
+                                <p class="font-blackops text-5xl text-white">
+                                    22
+                                    <span class="font-montserrat font-bold"
+                                        >июня</span
+                                    >
+                                    <br />
+                                    <span class="text-[#FFC64F]">22:00</span>
+                                </p>
+                                <button
+                                    @click="btnAct(3)"
+                                    :class="
+                                        btn[3] ? 'bg-white text-[#FFC64F]' : ''
+                                    "
+                                    type="button"
+                                    class="font-montserrat font-bold text-5xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
+                                >
+                                    Подробнее
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute -bottom-10 left-0 right-0 py-2 px-4"
+                        >
+                            <p
+                                class="text-[#fff] font-montserrat text-5xl font-bold rotate-[0deg] text-center group-hover:rotate-[5deg] origin-bottom-left"
+                            >
+                                Марафон 42км
+                            </p>
+                        </div>
                     </div>
                 </div>
+                <h3
+                    class="text-white font-extrabold font-blackops text-4xl md:text-6xl pt-[20px] md:pt-[40px]"
+                >
+                    TOP
+                    <span class="font-montserrat text-2xl md:text-4xl">
+                        мероприятий за
+                        <span class="text-[#009E5C]">неделю</span></span
+                    >
+                </h3>
                 <div
-                    class="relative"
-                    @mouseenter="visibleInf(2)"
-                    @mouseleave="visibleInf(2)"
+                    class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-14"
                 >
                     <div
-                        class="galary h-[400px] bg-[url('https://i.pinimg.com/564x/11/dc/09/11dc09c6ef7b9d3d34ff94f8adb3883b.jpg')]"
-                        :class="
-                            card[2]
-                                ? 'rotate-[1deg] backdrop-brightness-30'
-                                : 'rotate-[0deg]'
-                        "
+                        class="relative flex flex-col items-center"
+                        @mouseenter="visibleInf(4)"
+                        @mouseleave="visibleInf(4)"
                     >
                         <div
-                            class="text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
-                            :class="card[2] ? 'flex' : 'flex md:hidden'"
+                            class="galary w-full h-[200px] bg-[url('https://i.pinimg.com/564x/bb/b4/43/bbb443b10b6605db1ec9beec3c536ae0.jpg')]"
+                            :class="
+                                card[4]
+                                    ? 'rotate-[1deg] backdrop-brightness-30'
+                                    : 'rotate-[0deg]'
+                            "
                         >
-                            <p class="font-blackops text-5xl text-white">
-                                22
-                                <span class="font-montserrat font-bold"
-                                    >июня</span
-                                >
-                                <br />
-                                <span class="text-[#FFC64F]">22:00</span>
-                            </p>
-                            <button
-                                type="button"
-                                class="font-montserrat font-bold text-5xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
+                            <div
+                                class="text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
+                                :class="card[4] ? 'flex' : 'flex md:hidden'"
                             >
-                                Подробнее
-                            </button>
+                                <p
+                                    class="font-blackops text-xl md:text-2xl text-white"
+                                >
+                                    22
+                                    <span class="font-montserrat font-bold"
+                                        >июня</span
+                                    >
+                                    <br />
+                                    <span class="text-[#FFC64F]">22:00</span>
+                                </p>
+                                <button
+                                    @click="btnAct(4)"
+                                    :class="
+                                        btn[4] ? 'bg-white text-[#FFC64F]' : ''
+                                    "
+                                    type="button"
+                                    class="font-montserrat font-bold text-xl md:text-2xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
+                                >
+                                    Подробнее
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute -bottom-10 left-0 right-0 py-2 px-4"
+                        >
+                            <p
+                                class="text-[#fff] font-montserrat text-xl md:text-2xl font-bold rotate-[0deg] group-hover:rotate-[-2deg] text-center"
+                            >
+                                Футбольные матчи
+                            </p>
                         </div>
                     </div>
-                    <div class="absolute -bottom-10 left-0 right-0 py-2 px-4">
-                        <p
-                            class="text-[#fff] font-montserrat text-5xl font-bold rotate-[0deg] text-center group-hover:rotate-[5deg] origin-bottom-left"
-                        >
-                            Битвы <br />
-                            Танцев
-                        </p>
-                    </div>
-                </div>
-                <div
-                    class="relative"
-                    @mouseenter="visibleInf(3)"
-                    @mouseleave="visibleInf(3)"
-                >
                     <div
-                        class="galary h-[400px] bg-[url('https://i.pinimg.com/736x/44/b4/ec/44b4ecdb943d36c2b1087f2fde2e3fb7.jpg')]"
-                        :class="
-                            card[3]
-                                ? 'rotate-[1deg] backdrop-brightness-30'
-                                : 'rotate-[0deg]'
-                        "
+                        class="relative flex flex-col items-center"
+                        @mouseenter="visibleInf(5)"
+                        @mouseleave="visibleInf(5)"
                     >
                         <div
-                            class="text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
-                            :class="card[3] ? 'flex' : 'flex md:hidden'"
+                            class="galary w-full h-[200px] bg-[url('https://i.pinimg.com/564x/2e/f7/c7/2ef7c7d16d76622d83e3e4152f07a426.jpg')]"
+                            :class="
+                                card[5]
+                                    ? 'rotate-[1deg] backdrop-brightness-30'
+                                    : 'rotate-[0deg]'
+                            "
                         >
-                            <p class="font-blackops text-5xl text-white">
-                                22
-                                <span class="font-montserrat font-bold"
-                                    >июня</span
-                                >
-                                <br />
-                                <span class="text-[#FFC64F]">22:00</span>
-                            </p>
-                            <button
-                                type="button"
-                                class="font-montserrat font-bold text-5xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
+                            <div
+                                class="text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
+                                :class="card[5] ? 'flex' : 'flex md:hidden'"
                             >
-                                Подробнее
-                            </button>
+                                <p
+                                    class="font-blackops text-xl md:text-2xl text-white"
+                                >
+                                    22
+                                    <span class="font-montserrat font-bold"
+                                        >июня</span
+                                    >
+                                    <br />
+                                    <span class="text-[#FFC64F]">22:00</span>
+                                </p>
+                                <button
+                                    @click="btnAct(5)"
+                                    :class="
+                                        btn[5] ? 'bg-white text-[#FFC64F]' : ''
+                                    "
+                                    type="button"
+                                    class="font-montserrat font-bold text-xl md:text-2xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
+                                >
+                                    Подробнее
+                                </button>
+                            </div>
+                        </div>
+
+                        <div
+                            class="absolute -bottom-10 left-0 right-0 py-2 px-4"
+                        >
+                            <p
+                                class="text-[#fff] font-montserrat text-xl md:text-2xl font-bold rotate-[0deg] text-center group-hover:rotate-[-2deg]"
+                            >
+                                Киберспорт
+                            </p>
                         </div>
                     </div>
-                    <div class="absolute -bottom-10 left-0 right-0 py-2 px-4">
-                        <p
-                            class="text-[#fff] font-montserrat text-5xl font-bold rotate-[0deg] text-center group-hover:rotate-[5deg] origin-bottom-left"
+                    <div
+                        class="relative flex flex-col items-center"
+                        @mouseenter="visibleInf(6)"
+                        @mouseleave="visibleInf(6)"
+                    >
+                        <div
+                            class="galary w-full h-[200px] bg-[url('https://i.pinimg.com/564x/c1/d3/de/c1d3deb897eec2a9eb33a5741b8b4844.jpg')]"
+                            :class="
+                                card[6]
+                                    ? 'rotate-[1deg] backdrop-brightness-30'
+                                    : 'rotate-[0deg]'
+                            "
                         >
-                            Марафон 42км
-                        </p>
+                            <div
+                                class="text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
+                                :class="card[6] ? 'flex' : 'flex md:hidden'"
+                            >
+                                <p
+                                    class="font-blackops text-xl md:text-2xl text-white"
+                                >
+                                    22
+                                    <span class="font-montserrat font-bold"
+                                        >июня</span
+                                    >
+                                    <br />
+                                    <span class="text-[#FFC64F]">22:00</span>
+                                </p>
+                                <button
+                                    @click="btnAct(6)"
+                                    :class="
+                                        btn[6] ? 'bg-white text-[#FFC64F]' : ''
+                                    "
+                                    type="button"
+                                    class="font-montserrat font-bold text-xl md:text-2xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
+                                >
+                                    Подробнее
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute -bottom-10 left-0 right-0 py-2 px-4 group-hover:rotate-[-2deg]"
+                        >
+                            <p
+                                class="text-[#fff] font-montserrat text-xl md:text-2xl font-bold text-center"
+                            >
+                                Just Dens
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <h3
-                class="text-white font-extrabold font-blackops text-4xl md:text-6xl pt-[20px] md:pt-[40px]"
-            >
-                TOP
-                <span class="font-montserrat text-2xl md:text-4xl">
-                    мероприятий за недею</span
-                >
-            </h3>
-            <div
-                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-14"
-            >
-                <div
-                    class="relative flex flex-col items-center"
-                    @mouseenter="visibleInf(4)"
-                    @mouseleave="visibleInf(4)"
-                >
-                    <div
-                        class="galary w-full h-[200px] bg-[url('https://i.pinimg.com/564x/bb/b4/43/bbb443b10b6605db1ec9beec3c536ae0.jpg')]"
-                        :class="
-                            card[4]
-                                ? 'rotate-[1deg] backdrop-brightness-30'
-                                : 'rotate-[0deg]'
-                        "
-                    >
-                        <div
-                            class="text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
-                            :class="card[4] ? 'flex' : 'flex md:hidden'"
+        </div>
+        <div
+            class="min-h-screen items-center justify-center bg-[#FFC64F] p-[8px] pb-[60px] md:p-[40px] lg:p-[80px] flex"
+        >
+            <div class="container mx-auto flex flex-col lg:flex-row">
+                <!-- Левая сторона с информацией -->
+                <div class="lg:w-1/2 bg-secondary text-secondary p-8">
+                    <h1 class="text-3xl font-bold mb-4">Заголовок</h1>
+                    <h2 class="text-xl font-semibold mb-2">Подзаголовок</h2>
+                    <p class="text-black mb-4">
+                        Дополнительный текст. Дополнительный текст.
+                        Дополнительный текст. Дополнительный текст.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-primary hover:text-blue-700"
+                            >Facebook</a
                         >
-                            <p
-                                class="font-blackops text-xl md:text-2xl text-white"
-                            >
-                                22
-                                <span class="font-montserrat font-bold"
-                                    >июня</span
-                                >
-                                <br />
-                                <span class="text-[#FFC64F]">22:00</span>
-                            </p>
-                            <button
-                                type="button"
-                                class="font-montserrat font-bold text-xl md:text-2xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
-                            >
-                                Подробнее
-                            </button>
-                        </div>
-                    </div>
-                    <div class="absolute -bottom-10 left-0 right-0 py-2 px-4">
-                        <p
-                            class="text-[#fff] font-montserrat text-xl md:text-2xl font-bold rotate-[0deg] group-hover:rotate-[-2deg] text-center"
+                        <a href="#" class="text-primary hover:text-blue-700"
+                            >Twitter</a
                         >
-                            Футбольные матчи
-                        </p>
+                        <a href="#" class="text-primary hover:text-blue-700"
+                            >Instagram</a
+                        >
                     </div>
                 </div>
-                <div
-                    class="relative flex flex-col items-center"
-                    @mouseenter="visibleInf(5)"
-                    @mouseleave="visibleInf(5)"
-                >
-                    <div
-                        class="galary w-full h-[200px] bg-[url('https://i.pinimg.com/564x/2e/f7/c7/2ef7c7d16d76622d83e3e4152f07a426.jpg')]"
-                        :class="
-                            card[5]
-                                ? 'rotate-[1deg] backdrop-brightness-30'
-                                : 'rotate-[0deg]'
-                        "
-                    >
-                        <div
-                            class="text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
-                            :class="card[5] ? 'flex' : 'flex md:hidden'"
-                        >
-                            <p
-                                class="font-blackops text-xl md:text-2xl text-white"
-                            >
-                                22
-                                <span class="font-montserrat font-bold"
-                                    >июня</span
-                                >
-                                <br />
-                                <span class="text-[#FFC64F]">22:00</span>
-                            </p>
-                            <button
-                                type="button"
-                                class="font-montserrat font-bold text-xl md:text-2xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
-                            >
-                                Подробнее
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="absolute -bottom-10 left-0 right-0 py-2 px-4">
-                        <p
-                            class="text-[#fff] font-montserrat text-xl md:text-2xl font-bold rotate-[0deg] text-center group-hover:rotate-[-2deg]"
-                        >
-                            Киберспорт
-                        </p>
-                    </div>
-                </div>
-                <div
-                    class="relative flex flex-col items-center"
-                    @mouseenter="visibleInf(6)"
-                    @mouseleave="visibleInf(6)"
-                >
-                    <div
-                        class="galary w-full h-[200px] bg-[url('https://i.pinimg.com/564x/c1/d3/de/c1d3deb897eec2a9eb33a5741b8b4844.jpg')]"
-                        :class="
-                            card[6]
-                                ? 'rotate-[1deg] backdrop-brightness-30'
-                                : 'rotate-[0deg]'
-                        "
-                    >
-                        <div
-                            class="text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
-                            :class="card[6] ? 'flex' : 'flex md:hidden'"
-                        >
-                            <p
-                                class="font-blackops text-xl md:text-2xl text-white"
-                            >
-                                22
-                                <span class="font-montserrat font-bold"
-                                    >июня</span
-                                >
-                                <br />
-                                <span class="text-[#FFC64F]">22:00</span>
-                            </p>
-                            <button
-                                type="button"
-                                class="font-montserrat font-bold text-xl md:text-2xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
-                            >
-                                Подробнее
-                            </button>
-                        </div>
-                    </div>
-                    <div
-                        class="absolute -bottom-10 left-0 right-0 py-2 px-4 group-hover:rotate-[-2deg]"
-                    >
-                        <p
-                            class="text-[#fff] font-montserrat text-xl md:text-2xl font-bold text-center"
-                        >
-                            Just Dens
-                        </p>
-                    </div>
+                <!-- Правая сторона с картинкой -->
+                <div class="lg:w-1/2 bg-accent p-8">
+                    <img
+                        src="https://via.placeholder.com/400"
+                        alt="Изображение"
+                        class="w-full h-auto"
+                    />
                 </div>
             </div>
         </div>
@@ -356,6 +437,7 @@ export default defineComponent({
         return {
             FreeMode: false,
             card: [false, false, false, false, false, false],
+            btn: [false, false, false, false, false, false],
         };
     },
     setup() {
@@ -376,6 +458,9 @@ export default defineComponent({
         },
         visibleInf(el: number) {
             this.card[el] = !this.card[el];
+        },
+        btnAct(el: number) {
+            this.btn[el] = !this.btn[el];
         },
     },
 });
