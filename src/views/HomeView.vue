@@ -72,8 +72,7 @@
                 >
                     TOP
                     <span class="font-montserrat text-4xl md:text-6xl">
-                        мероприятий за
-                        <span class="text-[#009E5C]">месяц</span></span
+                        мероприятий за месяц</span
                     >
                 </h2>
                 <div
@@ -228,8 +227,7 @@
                 >
                     TOP
                     <span class="font-montserrat text-2xl md:text-4xl">
-                        мероприятий за
-                        <span class="text-[#009E5C]">неделю</span></span
+                        мероприятий за неделю</span
                     >
                 </h3>
                 <div
@@ -387,37 +385,153 @@
             </div>
         </div>
         <div
-            class="min-h-screen items-center justify-center bg-[#FFC64F] p-[8px] pb-[60px] md:p-[40px] lg:p-[80px] flex"
+            class="min-h-screen bg-[#FFC64F] p-[8px] pb-[60px] md:p-[40px] lg:p-[80px] flex relative"
         >
-            <div class="container mx-auto flex flex-col lg:flex-row">
+            <div
+                class="w-full h-full backLuupunder absolute top-0 left-0"
+            ></div>
+            <div
+                class="container mx-auto flex items-start justify-start relative"
+            >
                 <!-- Левая сторона с информацией -->
-                <div class="lg:w-1/2 bg-secondary text-secondary p-8">
-                    <h1 class="text-3xl font-bold mb-4">Заголовок</h1>
-                    <h2 class="text-xl font-semibold mb-2">Подзаголовок</h2>
-                    <p class="text-black mb-4">
-                        Дополнительный текст. Дополнительный текст.
-                        Дополнительный текст. Дополнительный текст.
+                <div class="text-secondary w-1/3 flex flex-col gap-8">
+                    <p
+                        class="uppercase text-[80px] font-montserrat font-extrabold text-black tracking-wider"
+                    >
+                        Информация
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-primary hover:text-blue-700"
-                            >Facebook</a
-                        >
-                        <a href="#" class="text-primary hover:text-blue-700"
-                            >Twitter</a
-                        >
-                        <a href="#" class="text-primary hover:text-blue-700"
-                            >Instagram</a
-                        >
-                    </div>
+                    <p
+                        class="text-[42px] font-montserrat font-extrabold text-black tracking-wider"
+                    >
+                        Монако, Рио-де-Жанейро, <br />Токио, Нью-Йорк, Китай
+                    </p>
+                    <p
+                        class="text-[16px] font-montserrat font-extrabold text-black tracking-wider"
+                    >
+                        Неповторимый опыт для любителей автоспорта, Эмоции от
+                        энергии и страсти бразильских болельщиков.
+                    </p>
+                    <p
+                        class="text-[21px] font-montserrat font-extrabold text-black tracking-wider"
+                    >
+                        Каждый день заполнен разнообразием спортивных испытаний
+                        и эмоций, и восторгом от культурного опыта в Токио.
+                    </p>
+                    <p
+                        class="text-[16px] font-montserrat font-extrabold text-black tracking-wider"
+                    >
+                        Участие в марафоне в Нью-Йорке - это погружение в
+                        энергию этого мегаполиса. Ощутите атмосферу восторга и
+                        напряжения, когда профессиональные игроки демонстрируют
+                        свои навыки на больших экранах, а толпа болельщиков
+                        поддерживает их.
+                    </p>
                 </div>
                 <!-- Правая сторона с картинкой -->
-                <div class="lg:w-1/2 bg-accent p-8">
-                    <img
-                        src="https://via.placeholder.com/400"
-                        alt="Изображение"
-                        class="w-full h-auto"
-                    />
+            </div>
+        </div>
+        <div
+            class="min-h-screen bg-[#FEF2D9] p-[8px] pb-[60px] md:p-[40px] lg:p-[80px] flex relative"
+        >
+            <div
+                class="w-full h-full backLuupunder2 absolute top-0 left-0"
+            ></div>
+            <div
+                class="container mx-auto flex items-start justify-start relative"
+            >
+                <!-- Левая сторона с информацией -->
+                <div class="text-secondary w-1/3 flex flex-col gap-8">
+                    <p
+                        class="uppercase text-[80px] font-montserrat font-extrabold text-black tracking-wider"
+                    >
+                        Карта
+                    </p>
                 </div>
+                <!-- Правая сторона с картинкой -->
+            </div>
+        </div>
+        <div
+            class="min-h-screen bg-[#FFC64F] p-[8px] pb-[60px] md:p-[40px] lg:p-[80px] flex relative"
+        >
+            <div
+                class="container mx-auto flex flex-col items-start justify-start relative gap-12"
+            >
+                <!-- Левая сторона с информацией -->
+                <div class="text-secondary flex flex-col gap-8">
+                    <p
+                        class="uppercase text-[80px] font-montserrat font-extrabold text-black tracking-wider"
+                    >
+                        купить билеты
+                    </p>
+                    <p
+                        class="text-[16px] w-2/3 font-montserrat font-extrabold text-black tracking-wider"
+                    >
+                        Цены увеличиваются по датам и квотам. На каждую ценовую
+                        категорию выделено ограниченное колличество билетов. Как
+                        только билеты в категории заканчваются — цена
+                        увеличивается.
+                    </p>
+                </div>
+
+                <div
+                    class="w-full grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-8"
+                >
+                    <div
+                        v-for="item in 4"
+                        :key="item"
+                        class="w-full bg-white flex relative rounded-lg"
+                    >
+                        <div
+                            class="uppercase w-2/3 flex flex-col items-center font-montserrat font-medium text-black p-[15px] border-dashed border-r-2 border-r-slate-300"
+                        >
+                            <p class="text-start w-full pb-[30px]">
+                                2 ИЮНЯ / ДЮРСО
+                            </p>
+                            <p class="text-[24px] text-center w-full">
+                                БАЗОВЫЙ <br />одно мероприятие
+                            </p>
+                            <p class="text-[9px] text-center w-full">
+                                МЕСТО-СТАНДАРТ / бесплатные напитки / 1 КВЕСТ
+                            </p>
+                        </div>
+                        <div
+                            class="w-1/3 flex flex-col items-center justify-center gap-4"
+                        >
+                            <button
+                                type="button"
+                                class="font-blackops text-white text-[10px] bg-[#FFC64F] rounded-[150px] py-[10px] px-[50px]"
+                            >
+                                buy ticket
+                            </button>
+                            <p class="text-[9px] font-montserrat text-black">
+                                ДО 30.05 — 1 000 ₽
+                            </p>
+                            <p class="text-[9px] font-montserrat text-black/50">
+                                ДО 15.06 — 1 500 ₽
+                            </p>
+                            <p class="text-[9px] font-montserrat text-black/30">
+                                ДО 2.07 — 2 000 ₽
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="min-h-screen bg-[#1F1F1F] p-[8px] pb-[60px] md:p-[40px] lg:p-[80px] flex relative"
+        >
+            <div
+                class="container mx-auto flex items-start justify-start relative"
+            >
+                <!-- Левая сторона с информацией -->
+                <div class="text-secondary w-1/3 flex flex-col gap-8">
+                    <p
+                        class="uppercase text-[80px] font-montserrat font-extrabold text-white tracking-wider"
+                    >
+                        КОНТАКТЫ
+                    </p>
+                </div>
+                <!-- Правая сторона с картинкой -->
             </div>
         </div>
     </div>
@@ -503,5 +617,11 @@ export default defineComponent({
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 0% 100%;
+}
+.backLuupunder {
+    background-image: url("../assets/img/Group3.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 100% 100%;
 }
 </style>
