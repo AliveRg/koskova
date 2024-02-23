@@ -194,6 +194,14 @@
                     </div>
                 </div>
             </div>
+            <h3
+                class="text-white font-extrabold font-blackops text-4xl md:text-6xl pt-[20px] md:pt-[40px]"
+            >
+                TOP
+                <span class="font-montserrat text-2xl md:text-4xl">
+                    мероприятий за недею</span
+                >
+            </h3>
             <div
                 class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-14"
             >
@@ -255,7 +263,7 @@
                     >
                         <div
                             class="text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
-                            :class="card[4] ? 'flex' : 'flex md:hidden'"
+                            :class="card[5] ? 'flex' : 'flex md:hidden'"
                         >
                             <p
                                 class="font-blackops text-xl md:text-2xl text-white"
