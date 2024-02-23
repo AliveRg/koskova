@@ -48,14 +48,14 @@
                 </div>
             </div>
             <button
-                class="uppercase font-montserrat font-bold text-2xl rounded-[40px] border-solid border-[1px] border-white py-[15px] px-[50px] relative text-white md:hover:bg-white md:hover:text-[#FFC64F] active:text-[#FFC64F] active:bg-white transition-all"
+                class="uppercase font-montserrat font-bold text-lg md:text-2xl rounded-[40px] border-solid border-[1px] border-white py-[10px] px-[30px] md:py-[15px] md:px-[50px] relative text-white md:hover:bg-white md:hover:text-[#FFC64F] active:text-[#FFC64F] active:bg-white transition-all"
                 type="button"
             >
                 забронировать билет
             </button>
         </div>
         <div
-            class="bg-[#FFC64F] w-screen p-[8px] md:p-[40px] lg:p-[80px] flex flex-col gap-[80px]"
+            class="bg-[#FFC64F] p-[8px] pb-[60px] md:p-[40px] lg:p-[80px] flex flex-col gap-[80px]"
         >
             <h2
                 class="text-white font-extrabold font-blackops text-6xl md:text-8xl pt-[40px] md:pt-[80px]"
@@ -68,13 +68,22 @@
             <div
                 class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 md:gap-8"
             >
-                <!-- Картинка 1 -->
-                <div class="relative group">
+                <div
+                    class="relative"
+                    @mouseenter="visibleInf(1)"
+                    @mouseleave="visibleInf(1)"
+                >
                     <div
-                        class="galary rotate-[0deg] group-hover:rotate-[1deg] group-hover:backdrop-brightness-50 h-[400px] bg-[url('https://i.pinimg.com/564x/28/4e/42/284e42dbed7609a3973822562334c85a.jpg')]"
+                        class="galary h-[400px] bg-[url('https://i.pinimg.com/564x/28/4e/42/284e42dbed7609a3973822562334c85a.jpg')]"
+                        :class="
+                            card[1]
+                                ? 'rotate-[1deg] backdrop-brightness-30'
+                                : 'rotate-[0deg]'
+                        "
                     >
                         <div
-                            class="group-hover:flex hidden text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
+                            class="text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
+                            :class="card[1] ? 'flex' : 'flex md:hidden'"
                         >
                             <p class="font-blackops text-5xl text-white">
                                 22
@@ -101,13 +110,22 @@
                         </p>
                     </div>
                 </div>
-                <!-- Картинка 2 -->
-                <div class="relative group">
+                <div
+                    class="relative"
+                    @mouseenter="visibleInf(2)"
+                    @mouseleave="visibleInf(2)"
+                >
                     <div
-                        class="galary rotate-[2deg] group-hover:rotate-0 group-hover:backdrop-brightness-50 h-[400px] bg-[url('https://i.pinimg.com/564x/11/dc/09/11dc09c6ef7b9d3d34ff94f8adb3883b.jpg')]"
+                        class="galary h-[400px] bg-[url('https://i.pinimg.com/564x/11/dc/09/11dc09c6ef7b9d3d34ff94f8adb3883b.jpg')]"
+                        :class="
+                            card[2]
+                                ? 'rotate-[1deg] backdrop-brightness-30'
+                                : 'rotate-[0deg]'
+                        "
                     >
                         <div
-                            class="group-hover:flex hidden text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
+                            class="text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
+                            :class="card[2] ? 'flex' : 'flex md:hidden'"
                         >
                             <p class="font-blackops text-5xl text-white">
                                 22
@@ -129,18 +147,27 @@
                         <p
                             class="text-[#fff] font-montserrat text-5xl font-bold rotate-[0deg] text-center group-hover:rotate-[5deg] origin-bottom-left"
                         >
-                            Танцевальные <br />
-                            батлы
+                            Битвы <br />
+                            Танцев
                         </p>
                     </div>
                 </div>
-                <!-- Картинка 3 -->
-                <div class="relative group">
+                <div
+                    class="relative"
+                    @mouseenter="visibleInf(3)"
+                    @mouseleave="visibleInf(3)"
+                >
                     <div
-                        class="galary rotate-[-2deg] group-hover:rotate-0 group-hover:backdrop-brightness-50 h-[400px] bg-[url('https://i.pinimg.com/736x/44/b4/ec/44b4ecdb943d36c2b1087f2fde2e3fb7.jpg')]"
+                        class="galary h-[400px] bg-[url('https://i.pinimg.com/736x/44/b4/ec/44b4ecdb943d36c2b1087f2fde2e3fb7.jpg')]"
+                        :class="
+                            card[3]
+                                ? 'rotate-[1deg] backdrop-brightness-30'
+                                : 'rotate-[0deg]'
+                        "
                     >
                         <div
-                            class="group-hover:flex hidden text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
+                            class="text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
+                            :class="card[3] ? 'flex' : 'flex md:hidden'"
                         >
                             <p class="font-blackops text-5xl text-white">
                                 22
@@ -162,23 +189,30 @@
                         <p
                             class="text-[#fff] font-montserrat text-5xl font-bold rotate-[0deg] text-center group-hover:rotate-[5deg] origin-bottom-left"
                         >
-                            Выдержка <br />
-                            марафон 42км
+                            Марафон 42км
                         </p>
                     </div>
                 </div>
-                <!-- Добавьте здесь больше блоков для других изображений -->
             </div>
             <div
                 class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-14"
             >
-                <!-- Картинка 1 -->
-                <div class="relative flex flex-col items-center group">
+                <div
+                    class="relative flex flex-col items-center"
+                    @mouseenter="visibleInf(4)"
+                    @mouseleave="visibleInf(4)"
+                >
                     <div
-                        class="galary rotate-[2deg] group-hover:rotate-0 group-hover:backdrop-brightness-50 w-full h-[200px] bg-[url('https://i.pinimg.com/564x/bb/b4/43/bbb443b10b6605db1ec9beec3c536ae0.jpg')]"
+                        class="galary w-full h-[200px] bg-[url('https://i.pinimg.com/564x/bb/b4/43/bbb443b10b6605db1ec9beec3c536ae0.jpg')]"
+                        :class="
+                            card[4]
+                                ? 'rotate-[1deg] backdrop-brightness-30'
+                                : 'rotate-[0deg]'
+                        "
                     >
                         <div
-                            class="group-hover:flex hidden text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
+                            class="text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
+                            :class="card[4] ? 'flex' : 'flex md:hidden'"
                         >
                             <p
                                 class="font-blackops text-xl md:text-2xl text-white"
@@ -202,18 +236,26 @@
                         <p
                             class="text-[#fff] font-montserrat text-xl md:text-2xl font-bold rotate-[0deg] group-hover:rotate-[-2deg] text-center"
                         >
-                            Футбол <br />
-                            футбольные матчи
+                            Футбольные матчи
                         </p>
                     </div>
                 </div>
-                <!-- Картинка 2 -->
-                <div class="relative flex flex-col items-center group">
+                <div
+                    class="relative flex flex-col items-center"
+                    @mouseenter="visibleInf(5)"
+                    @mouseleave="visibleInf(5)"
+                >
                     <div
-                        class="galary rotate-[2deg] group-hover:rotate-0 group-hover:backdrop-brightness-50 w-full h-[200px] bg-[url('https://i.pinimg.com/564x/2e/f7/c7/2ef7c7d16d76622d83e3e4152f07a426.jpg')]"
+                        class="galary w-full h-[200px] bg-[url('https://i.pinimg.com/564x/2e/f7/c7/2ef7c7d16d76622d83e3e4152f07a426.jpg')]"
+                        :class="
+                            card[5]
+                                ? 'rotate-[1deg] backdrop-brightness-30'
+                                : 'rotate-[0deg]'
+                        "
                     >
                         <div
-                            class="group-hover:flex hidden text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
+                            class="text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
+                            :class="card[4] ? 'flex' : 'flex md:hidden'"
                         >
                             <p
                                 class="font-blackops text-xl md:text-2xl text-white"
@@ -238,18 +280,26 @@
                         <p
                             class="text-[#fff] font-montserrat text-xl md:text-2xl font-bold rotate-[0deg] text-center group-hover:rotate-[-2deg]"
                         >
-                            Киберспорт <br />
-                            Онлайн соревнования
+                            Киберспорт
                         </p>
                     </div>
                 </div>
-                <!-- Картинка 3 -->
-                <div class="relative flex flex-col items-center group">
+                <div
+                    class="relative flex flex-col items-center"
+                    @mouseenter="visibleInf(6)"
+                    @mouseleave="visibleInf(6)"
+                >
                     <div
-                        class="galary rotate-[2deg] group-hover:rotate-0 group-hover:backdrop-brightness-50 w-full h-[200px] bg-[url('https://i.pinimg.com/564x/c1/d3/de/c1d3deb897eec2a9eb33a5741b8b4844.jpg')]"
+                        class="galary w-full h-[200px] bg-[url('https://i.pinimg.com/564x/c1/d3/de/c1d3deb897eec2a9eb33a5741b8b4844.jpg')]"
+                        :class="
+                            card[6]
+                                ? 'rotate-[1deg] backdrop-brightness-30'
+                                : 'rotate-[0deg]'
+                        "
                     >
                         <div
-                            class="group-hover:flex hidden text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
+                            class="text-white bg-black/60 w-full h-full flex-col items-center justify-center gap-[20px]"
+                            :class="card[6] ? 'flex' : 'flex md:hidden'"
                         >
                             <p
                                 class="font-blackops text-xl md:text-2xl text-white"
@@ -275,13 +325,10 @@
                         <p
                             class="text-[#fff] font-montserrat text-xl md:text-2xl font-bold text-center"
                         >
-                            Just Dens <br />
-                            битва за кубок
+                            Just Dens
                         </p>
                     </div>
                 </div>
-
-                <!-- Добавьте здесь больше блоков для других изображений -->
             </div>
         </div>
     </div>
@@ -300,6 +347,7 @@ export default defineComponent({
     data() {
         return {
             FreeMode: false,
+            card: [false, false, false, false, false, false],
         };
     },
     setup() {
@@ -317,6 +365,9 @@ export default defineComponent({
         },
         onSlideChange() {
             console.log("slide change");
+        },
+        visibleInf(el: number) {
+            this.card[el] = !this.card[el];
         },
     },
 });
