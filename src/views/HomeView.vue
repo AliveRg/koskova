@@ -1,13 +1,38 @@
 <template>
     <div>
         <div
-            class="w-full h-[40px] bg-black flex items-center justify-evenly py-[4px] px-[10px] sticky top-0 z-[100]"
+            class="w-full h-[40px] bg-black flex items-center justify-evenly py-[4px] px-[10px] sticky top-0 z-[100] uppercase font-montserrat font-bold"
         >
-            <div class="text-white text-lg font-blackops font-bold">lorem</div>
-            <div class="text-white text-lg font-blackops font-bold">lorem</div>
-            <div class="text-white text-lg font-blackops font-bold">lorem</div>
-            <div class="text-white text-lg font-blackops font-bold">lorem</div>
-            <div class="text-white text-lg font-blackops font-bold">lorem</div>
+            <a
+                href="#top"
+                class="text-white text-lg border-[1px] border-solid border-transparent hover:border-b-[#FFC64F] transition-all"
+            >
+                топ мероприятия
+            </a>
+            <a
+                href="#info"
+                class="text-white text-lg border-[1px] border-solid border-transparent hover:border-b-[#FFC64F] transition-all"
+            >
+                информация
+            </a>
+            <a
+                href="#news"
+                class="text-white text-lg border-[1px] border-solid border-transparent hover:border-b-[#FFC64F] transition-all"
+            >
+                новости
+            </a>
+            <a
+                href="#price"
+                class="text-white text-lg border-[1px] border-solid border-transparent hover:border-b-[#FFC64F] transition-all"
+            >
+                цены на билеты
+            </a>
+            <a
+                href="#buy"
+                class="text-white text-lg border-[1px] border-solid border-transparent hover:border-b-[#FFC64F] transition-all"
+            >
+                купить билет
+            </a>
         </div>
         <!-- <swiper
                 :modules="modules"
@@ -32,6 +57,7 @@
             </swiper> -->
         <div
             class="bg-[#009E5C] h-screen w-screen relative flex flex-col items-center justify-center gap-[80px] z-10"
+            id="buy"
         >
             <div class="w-full h-full backLuup absolute top-0 left-0"></div>
 
@@ -60,12 +86,13 @@
                 to="/about"
                 class="uppercase font-montserrat font-bold text-lg md:text-2xl rounded-[40px] border-solid border-[1px] border-white py-[10px] px-[30px] md:py-[15px] md:px-[50px] relative text-white md:hover:bg-white md:hover:text-[#FFC64F] active:text-[#FFC64F] active:bg-white transition-all"
             >
-                забронировать билет
+                купить билет
             </router-link>
         </div>
         <div class="">
             <div
                 class="bg-[#FFC64F] p-[8px] pb-[60px] md:p-[40px] lg:p-[80px] flex flex-col gap-[80px]"
+                id="top"
             >
                 <h2
                     class="text-white font-extrabold font-blackops text-6xl md:text-8xl pt-[40px] md:pt-[80px]"
@@ -386,6 +413,7 @@
         </div>
         <div
             class="min-h-screen bg-[#FFC64F] p-[8px] pb-[60px] md:p-[40px] lg:p-[80px] flex relative"
+            id="info"
         >
             <div
                 class="w-full h-full backLuupunder absolute top-0 left-0"
@@ -432,6 +460,7 @@
         </div>
         <div
             class="min-h-screen bg-[#FEF2D9] p-[8px] pb-[60px] md:p-[40px] lg:p-[80px] flex relative"
+            id="news"
         >
             <div
                 class="w-full h-full backLuupunder2 absolute top-0 left-0"
@@ -452,6 +481,7 @@
         </div>
         <div
             class="min-h-screen bg-[#FFC64F] p-[8px] pb-[60px] md:p-[40px] lg:p-[80px] flex relative"
+            id="price"
         >
             <div
                 class="container mx-auto flex flex-col items-start justify-start relative gap-12"
@@ -461,7 +491,7 @@
                     <p
                         class="uppercase text-[80px] font-montserrat font-extrabold text-black tracking-wider"
                     >
-                        купить билеты
+                        Цены на билеты
                     </p>
                     <p
                         class="text-[16px] w-2/3 font-montserrat font-extrabold text-black tracking-wider"
