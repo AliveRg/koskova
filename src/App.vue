@@ -11,7 +11,7 @@ import { RouterLink, RouterView } from "vue-router";
             <!-- Левая сторона с информацией -->
             <div class="text-secondary w-1/2 flex flex-col gap-8">
                 <p
-                    class="uppercase text-[80px] font-montserrat font-extrabold text-white tracking-wider"
+                    class="uppercase text-[30px] md:text-[80px] font-montserrat font-extrabold text-white tracking-wider"
                 >
                     КОНТАКТЫ
                 </p>

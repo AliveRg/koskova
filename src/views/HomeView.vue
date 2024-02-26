@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div
+        <!-- <div
             class="w-full h-[40px] bg-black flex items-center justify-evenly py-[4px] px-[10px] sticky top-0 z-[100] uppercase font-montserrat font-bold"
         >
             <a
@@ -33,7 +33,7 @@
             >
                 купить билет
             </a>
-        </div>
+        </div> -->
         <!-- <swiper
                 :modules="modules"
                 :direction="'vertical'"
@@ -422,38 +422,43 @@
                 class="container mx-auto flex items-start justify-start relative"
             >
                 <!-- Левая сторона с информацией -->
-                <div class="text-secondary w-1/3 flex flex-col gap-8">
+                <div class="text-secondary lg:w-1/3 flex flex-col gap-8">
                     <p
-                        class="uppercase text-[80px] font-montserrat font-extrabold text-black tracking-wider"
+                        class="uppercase text-[42px] md:text-[80px] font-montserrat font-extrabold text-black tracking-wider"
                     >
                         Информация
                     </p>
-                    <p
-                        class="text-[42px] font-montserrat font-extrabold text-black tracking-wider"
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6 relative"
                     >
-                        Монако, Рио-де-Жанейро, <br />Токио, Нью-Йорк, Китай
-                    </p>
-                    <p
-                        class="text-[16px] font-montserrat font-extrabold text-black tracking-wider"
-                    >
-                        Неповторимый опыт для любителей автоспорта, Эмоции от
-                        энергии и страсти бразильских болельщиков.
-                    </p>
-                    <p
-                        class="text-[21px] font-montserrat font-extrabold text-black tracking-wider"
-                    >
-                        Каждый день заполнен разнообразием спортивных испытаний
-                        и эмоций, и восторгом от культурного опыта в Токио.
-                    </p>
-                    <p
-                        class="text-[16px] font-montserrat font-extrabold text-black tracking-wider"
-                    >
-                        Участие в марафоне в Нью-Йорке - это погружение в
-                        энергию этого мегаполиса. Ощутите атмосферу восторга и
-                        напряжения, когда профессиональные игроки демонстрируют
-                        свои навыки на больших экранах, а толпа болельщиков
-                        поддерживает их.
-                    </p>
+                        <p
+                            class="text-[22px] md:text-[42px] font-montserrat font-extrabold text-black tracking-wider"
+                        >
+                            Монако, Рио-де-Жанейро, <br />Токио, Нью-Йорк, Китай
+                        </p>
+                        <p
+                            class="text-[13px] md:text-[16px] font-montserrat font-extrabold text-white tracking-wider backdrop-blur-lg p-3 rounded-md"
+                        >
+                            Неповторимый опыт для любителей автоспорта, Эмоции
+                            от энергии и страсти бразильских болельщиков.
+                        </p>
+                        <p
+                            class="text-[16px] md:text-[21px] font-montserrat font-extrabold text-black tracking-wider"
+                        >
+                            Каждый день заполнен разнообразием спортивных
+                            испытаний и эмоций, и восторгом от культурного опыта
+                            в Токио.
+                        </p>
+                        <p
+                            class="text-[13px] md:text-[16px] font-montserrat font-extrabold text-white tracking-wider backdrop-blur-lg p-3 rounded-md"
+                        >
+                            Участие в марафоне в Нью-Йорке - это погружение в
+                            энергию этого мегаполиса. Ощутите атмосферу восторга
+                            и напряжения, когда профессиональные игроки
+                            демонстрируют свои навыки на больших экранах, а
+                            толпа болельщиков поддерживает их.
+                        </p>
+                    </div>
                 </div>
                 <!-- Правая сторона с картинкой -->
             </div>
@@ -466,17 +471,43 @@
                 class="w-full h-full backLuupunder2 absolute top-0 left-0"
             ></div>
             <div
-                class="container mx-auto flex items-start justify-start relative"
+                class="container mx-auto flex flex-col items-start justify-start relative"
             >
                 <!-- Левая сторона с информацией -->
                 <div class="text-secondary w-1/3 flex flex-col gap-8">
                     <p
-                        class="uppercase text-[80px] font-montserrat font-extrabold text-black tracking-wider"
+                        class="uppercase text-[42px] md:text-[80px] font-montserrat font-extrabold text-black tracking-wider"
                     >
-                        Карта
+                        Новости
                     </p>
                 </div>
                 <!-- Правая сторона с картинкой -->
+                <div
+                    class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full"
+                >
+                    <!-- Пример новости -->
+                    <div
+                        v-for="(news, index) in newsList"
+                        :key="index"
+                        class="bg-white p-4 rounded-lg shadow-md"
+                    >
+                        <img
+                            :src="news.image"
+                            alt="News Image"
+                            class="w-full h-40 object-cover rounded-t-lg"
+                        />
+                        <div class="mt-4">
+                            <h3 class="text-lg font-semibold truncate">
+                                {{ news.title }}
+                            </h3>
+                            <p
+                                class="text-gray-600 mt-2 max-h-[350px] overflow-y-scroll"
+                            >
+                                {{ news.description }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div
@@ -489,12 +520,12 @@
                 <!-- Левая сторона с информацией -->
                 <div class="text-secondary flex flex-col gap-8">
                     <p
-                        class="uppercase text-[80px] font-montserrat font-extrabold text-black tracking-wider"
+                        class="uppercase text-[42px] md:text-[80px] font-montserrat font-extrabold text-black tracking-wider"
                     >
                         Цены на билеты
                     </p>
                     <p
-                        class="text-[16px] w-2/3 font-montserrat font-extrabold text-black tracking-wider"
+                        class="text-[16px] md:w-2/3 font-montserrat font-extrabold text-black tracking-wider"
                     >
                         Цены увеличиваются по датам и квотам. На каждую ценовую
                         категорию выделено ограниченное колличество билетов. Как
@@ -509,10 +540,10 @@
                     <div
                         v-for="item in tickers"
                         :key="item.id"
-                        class="w-full bg-white flex relative rounded-lg"
+                        class="w-full bg-white relative rounded-lg flex flex-col md:flex-row"
                     >
                         <div
-                            class="uppercase w-2/3 flex flex-col items-center font-montserrat font-medium text-black p-[15px] border-dashed border-r-2 border-r-slate-300"
+                            class="uppercase md:w-2/3 flex flex-col items-center font-montserrat font-medium text-black p-[15px] border-dashed md:border-r-2 md:border-r-slate-300 border-b-2 md:border-b-slate-300"
                         >
                             <p class="text-start w-full pb-[30px]">
                                 {{ item.date }} / {{ item.map }}
@@ -526,7 +557,7 @@
                             </p>
                         </div>
                         <div
-                            class="w-1/3 flex flex-col items-center justify-center gap-4"
+                            class="md:w-1/3 flex md:flex-col items-center justify-center gap-4 m-3"
                         >
                             <button
                                 type="button"
@@ -604,6 +635,52 @@ export default defineComponent({
                     price: [2000, 2500, 3000],
                 },
             ],
+            newsList: [
+                {
+                    title: "Мадридский «Реал» с минимальным счётом обыграл «Севилью» благодаря голу Модрича",
+                    description:
+                        "На стадионе «Сантьяго Бернабеу» завершился матч 26-го тура испанской Примеры, в котором мадридский «Реал» принимал «Севилью». Хозяева одержали победу со счётом 1:0.",
+                    image: "https://img.championat.com/s/1350x900/news/big/b/q/madridskij-real-s-minimalnym-schyotom-obygral-sevilyu-blagodarya-golu-modricha_1708911816615419232.jpg",
+                },
+                {
+                    title: "Киев заочно приговорил Дениса Майданова к 15 годам колонии за песню 'Сарматушка'",
+                    description:
+                        "Певец и депутат Госдумы Денис Майданов получил на Украине 15 лет лишения свободы за песню 'Сарматушка', которую он написал в соавторстве с политиком Дмитрием Рогозиным.",
+                    image: "https://www.m24.ru/b/d/nBkSUhL2h1Ammca0Jr6BrNOp2Z3z8Zj21iDEh_fH_nKUPXuaDyXTjHou4MVO6BCVoZKf9GqVe5Q_CPawk214LyWK9G1N5ho=U_Lz9r60VBtwskcqnvmHng.jpg",
+                },
+                {
+                    title: "Интервью с вице-чемпионом Туринг-Лайта",
+                    description:
+                        "В преддверии сезона мы открываем цикл интервью с одними из самых ярких пилотов российского кольца. И сегодня поговорим с Егором Саниным, который известен болельщикам как самый молодой победитель Кубка России",
+                    image: "https://static.tildacdn.com/tild3161-3462-4435-b866-373962366161/MaratDaminov_5RCRS_N.jpg",
+                },
+                {
+                    title: "Пилоты на машинах TCR с DSG разыграют Кубок SMP Racing",
+                    description:
+                        "В новом сезоне участники серии СМП РСКГ Туринг могут стартовать на автомобилях международной категории TCR, оснащенных не только секвентальными коробками передач, но и роботизированными агрегатами типа DSG.",
+                    image: "https://static.tildacdn.com/tild3933-3433-4662-b536-616539666462/MaratDaminov_4RCRS_I.jpg",
+                },
+                {
+                    title: "Календарь СМП РСКГ Формула в 2023 году состоит из трех этапов",
+                    description:
+                        "Пилоты болидов класса Формула 4 стартуют в рамках проекта СМП РСКГ Формула на трех этапах совместно с участниками кузовных классов СМП РСКГ Туринг.",
+                    image: "https://static.tildacdn.com/tild6364-6339-4965-a662-373039666262/Danil_Kolodin_RSKG_N.jpg",
+                },
+                {
+                    title: "Есть сотня! Кучеров достиг знаковой отметки и оторвался от конкурентов",
+                    description:
+                        "Гонка за первое место в списке лучших бомбардиров — одна из главных интриг регулярного чемпионата НХЛ. Нэйтан Маккиннон и Никита Кучеров сменяют друг друга на вершине, но и Коннор Макдэвид нагоняет конкурентов.",
+                    image: "https://ss.sport-express.ru/userfiles/materials/198/1985945/don.jpg",
+                },
+                {
+                    title: "«Ливерпуль» победил «Челси» и ВАР. Клопп взял трофей в последний сезон на «Энфилде»",
+                    description:
+                        "Салах, Нуньес, Жота, Александер-Арнолд, Собослаи, Алиссон, Матип, Джонс, Алькантара, Байчетич. Это — список травмированных футболистов «Ливерпуля», а не его стартовый состав на финал Кубка лиги. ",
+                    image: "https://ss.sport-express.ru/userfiles/materials/198/1985928/volga.jpg",
+                },
+
+                // Добавьте остальные новости по аналогии
+            ],
         };
     },
     setup() {
@@ -675,5 +752,15 @@ export default defineComponent({
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 100% 100%;
+}
+.backLuupunder2 {
+    background-image: url("../assets/img/Group5.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100% 0%;
+}
+
+.ssal {
+    backdrop-filter: blur(20px);
 }
 </style>
