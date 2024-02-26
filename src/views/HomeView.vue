@@ -489,7 +489,7 @@
                     <div
                         v-for="(news, index) in newsList"
                         :key="index"
-                        class="bg-white p-4 rounded-lg shadow-md"
+                        class="bg-white p-4 rounded-lg shadow-md relative group"
                     >
                         <img
                             :src="news.image"
@@ -497,15 +497,29 @@
                             class="w-full h-40 object-cover rounded-t-lg"
                         />
                         <div class="mt-4">
-                            <h3 class="text-lg font-semibold truncate">
+                            <marquee
+                                onMouseOver="this.stop()"
+                                onMouseOut="this.start()"
+                                class="text-lg font-semibold truncate"
+                            >
                                 {{ news.title }}
-                            </h3>
+                            </marquee>
                             <p
                                 class="text-gray-600 mt-2 max-h-[350px] overflow-y-scroll"
                             >
                                 {{ news.description }}
                             </p>
                         </div>
+                        <a
+                            :href="news.link"
+                            class="absolute top-2 left-2 w-[40px] bg-[#FFC64F] rounded-[10px] p-2 group-hover:scale-[110%] transition-all"
+                        >
+                            <img
+                                class="w-full"
+                                src="https://cdn.icon-icons.com/icons2/1097/PNG/512/1485477204-share2_78604.png"
+                                alt=""
+                            />
+                        </a>
                     </div>
                 </div>
             </div>
@@ -640,6 +654,7 @@ export default defineComponent({
                     title: "Мадридский «Реал» с минимальным счётом обыграл «Севилью» благодаря голу Модрича",
                     description:
                         "На стадионе «Сантьяго Бернабеу» завершился матч 26-го тура испанской Примеры, в котором мадридский «Реал» принимал «Севилью». Хозяева одержали победу со счётом 1:0.",
+                    link: "https://news.sportbox.ru/Vidy_sporta/Futbol/Evropejskie_chempionaty/Ispaniya/spbnews_NI2021978_Gol_Modricha_prines_Realu_pobedu_nad_Seviljej_v_matche_chempionata_Ispanii#:~:text=%D0%9C%D0%B0%D0%B4%D1%80%D0%B8%D0%B4%D1%81%D0%BA%D0%B8%D0%B9%20%C2%AB%D0%A0%D0%B5%D0%B0%D0%BB%C2%BB%20%D0%BD%D0%B0%20%D1%81%D0%B2%D0%BE%D0%B5%D0%BC%20%D0%BF%D0%BE%D0%BB%D0%B5,24)%20%D0%B8%D0%B4%D0%B5%D1%82%2015%E2%80%91%D0%B9.",
                     image: "https://img.championat.com/s/1350x900/news/big/b/q/madridskij-real-s-minimalnym-schyotom-obygral-sevilyu-blagodarya-golu-modricha_1708911816615419232.jpg",
                 },
                 {
@@ -647,36 +662,42 @@ export default defineComponent({
                     description:
                         "Певец и депутат Госдумы Денис Майданов получил на Украине 15 лет лишения свободы за песню 'Сарматушка', которую он написал в соавторстве с политиком Дмитрием Рогозиным.",
                     image: "https://www.m24.ru/b/d/nBkSUhL2h1Ammca0Jr6BrNOp2Z3z8Zj21iDEh_fH_nKUPXuaDyXTjHou4MVO6BCVoZKf9GqVe5Q_CPawk214LyWK9G1N5ho=U_Lz9r60VBtwskcqnvmHng.jpg",
+                    link: "https://www.m24.ru/news/shou-biznes/21022024/668064",
                 },
                 {
                     title: "Интервью с вице-чемпионом Туринг-Лайта",
                     description:
                         "В преддверии сезона мы открываем цикл интервью с одними из самых ярких пилотов российского кольца. И сегодня поговорим с Егором Саниным, который известен болельщикам как самый молодой победитель Кубка России",
                     image: "https://static.tildacdn.com/tild3161-3462-4435-b866-373962366161/MaratDaminov_5RCRS_N.jpg",
+                    link: "https://raf-rcrs.ru/tpost/z5z8ekaih1-intervyu-s-vitse-chempionom-turing-laita",
                 },
                 {
                     title: "Пилоты на машинах TCR с DSG разыграют Кубок SMP Racing",
                     description:
                         "В новом сезоне участники серии СМП РСКГ Туринг могут стартовать на автомобилях международной категории TCR, оснащенных не только секвентальными коробками передач, но и роботизированными агрегатами типа DSG.",
                     image: "https://static.tildacdn.com/tild3933-3433-4662-b536-616539666462/MaratDaminov_4RCRS_I.jpg",
+                    link: "https://raf-rcrs.ru/tpost/2ch1oxb2b1-piloti-na-mashinah-tcr-s-dsg-razigrayut",
                 },
                 {
                     title: "Календарь СМП РСКГ Формула в 2023 году состоит из трех этапов",
                     description:
                         "Пилоты болидов класса Формула 4 стартуют в рамках проекта СМП РСКГ Формула на трех этапах совместно с участниками кузовных классов СМП РСКГ Туринг.",
                     image: "https://static.tildacdn.com/tild6364-6339-4965-a662-373039666262/Danil_Kolodin_RSKG_N.jpg",
+                    link: "https://raf-rcrs.ru/tpost/mim2xl4841-kalendar-smp-rskg-formula-v-2023-godu-so",
                 },
                 {
                     title: "Есть сотня! Кучеров достиг знаковой отметки и оторвался от конкурентов",
                     description:
                         "Гонка за первое место в списке лучших бомбардиров — одна из главных интриг регулярного чемпионата НХЛ. Нэйтан Маккиннон и Никита Кучеров сменяют друг друга на вершине, но и Коннор Макдэвид нагоняет конкурентов.",
                     image: "https://ss.sport-express.ru/userfiles/materials/198/1985945/don.jpg",
+                    link: "https://www.sport-express.ru/hockey/nhl/reviews/nikita-kucherov-pervym-v-sezone-nhl-nabral-100-ochkov-obzor-matcha-nyu-dzhersi-tampa-i-video-golov-25-fevralya-2024-goda-2183212/#:~:text=%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BD%D0%B0%D0%BF%D0%B0%D0%B4%D0%B0%D1%8E%D1%89%D0%B8%D0%B9%20%C2%AB%D0%A2%D0%B0%D0%BC%D0%BF%D1%8B%C2%BB%20%D0%BD%D0%B0%D0%B1%D1%80%D0%B0%D0%BB%20%D1%87%D0%B5%D1%82%D1%8B%D1%80%D0%B5,%D1%81%20%C2%AB%D0%9D%D1%8C%D1%8E%2D%D0%94%D0%B6%D0%B5%D1%80%D1%81%D0%B8%C2%BB.&text=%D0%93%D0%BE%D0%BB%D1%8B%3A%20%D0%A5%D0%B5%D0%B4%D0%BC%D0%B0%D0%BD%20%E2%80%94%2010%20(%D0%9A%D1%83%D1%87%D0%B5%D1%80%D0%BE%D0%B2,%3A15%20%E2%80%94%200%3A2.",
                 },
                 {
                     title: "«Ливерпуль» победил «Челси» и ВАР. Клопп взял трофей в последний сезон на «Энфилде»",
                     description:
                         "Салах, Нуньес, Жота, Александер-Арнолд, Собослаи, Алиссон, Матип, Джонс, Алькантара, Байчетич. Это — список травмированных футболистов «Ливерпуля», а не его стартовый состав на финал Кубка лиги. ",
                     image: "https://ss.sport-express.ru/userfiles/materials/198/1985928/volga.jpg",
+                    link: "https://www.sport-express.ru/football/england/reviews/liverpul-pobedil-chelsi-obzor-finala-kubka-angliyskoy-ligi-25-fevralya-2024-2183169/#:~:text=%D0%9A%D0%BB%D0%BE%D0%BF%D0%BF%20%D0%B2%D0%B7%D1%8F%D0%BB%20%D1%82%D1%80%D0%BE%D1%84%D0%B5%D0%B9%20%D0%B2%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B8%D0%B9%20%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20%D0%BD%D0%B0%20%C2%AB%D0%AD%D0%BD%D1%84%D0%B8%D0%BB%D0%B4%D0%B5%C2%BB&text=%D0%97%D0%B0%D1%89%D0%B8%D1%82%D0%BD%D0%B8%D0%BA%20%C2%AB%D0%9B%D0%B8%D0%B2%D0%B5%D1%80%D0%BF%D1%83%D0%BB%D1%8F%C2%BB%20%D0%92%D0%B8%D1%80%D0%B4%D0%B6%D0%B8%D0%BB%20%D0%B2%D0%B0%D0%BD%20%D0%94%D0%B5%D0%B9%D0%BA,%D0%9A%D1%83%D0%B1%D0%BA%D0%B0%20%D0%BB%D0%B8%D0%B3%D0%B8%20%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2%20%C2%AB%D0%A7%D0%B5%D0%BB%D1%81%D0%B8%C2%BB.&text=%D0%9A%D1%83%D0%B1%D0%BE%D0%BA%20%D0%BB%D0%B8%D0%B3%D0%B8%20%E2%80%94%20%D1%83%20%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D1%85.",
                 },
 
                 // Добавьте остальные новости по аналогии
