@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import moment from "moment";
+import emailjs from "@emailjs/browser";
 </script>
 
 <template>
@@ -213,6 +214,15 @@ import moment from "moment";
                 </div>
             </div>
         </div>
+        <form ref="form" @submit.prevent="sendEmail">
+            <label>Name</label>
+            <input type="text" name="user_name" />
+            <label>Email</label>
+            <input type="email" name="user_email" />
+            <label>Message</label>
+            <textarea name="message"></textarea>
+            <input type="submit" value="Send" />
+        </form>
     </div>
 </template>
 
@@ -412,6 +422,25 @@ export default {
         },
         closeModalI() {
             this.selectedEventI = null;
+        },
+        sendEmail() {
+            emailjs
+                .sendForm(
+                    "service_mw0zaxj",
+                    "template_hgkm6tv",
+                    this.$refs.form,
+                    {
+                        publicKey: "mqXy-a2b0qm0vr3oN",
+                    }
+                )
+                .then(
+                    () => {
+                        console.log("SUCCESS!");
+                    },
+                    (error) => {
+                        console.log("FAILED...", error.text);
+                    }
+                );
         },
     },
 };
