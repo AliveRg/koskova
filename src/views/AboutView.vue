@@ -40,7 +40,7 @@ import moment from "moment";
                     class="mb-6 container mx-auto rounded-md font-montserrat group"
                 >
                     <div
-                        class="group-hover:shadow-sm group-hover:scale-105 transition-all relative p-4 md:p-8 flex flex-col md:flex-row w-full justify-between gap-8 md:gap-0"
+                        class="group-hover:shadow-sm group-hover:scale-105 transition-all relative p-4 md:p-8 flex flex-col md:flex-row w-full justify-between gap-8 md:gap-4"
                     >
                         <div
                             class="flex flex-col items-start justify-start w-2/3"

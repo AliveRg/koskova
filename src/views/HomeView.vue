@@ -752,12 +752,14 @@ export default defineComponent({
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 100% 100%;
+    background-attachment: fixed;
 }
 .backLuupunder2 {
     background-image: url("../assets/img/Group5.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 100% 0%;
+    background-attachment: fixed;
 }
 
 .ssal {
