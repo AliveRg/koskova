@@ -3,7 +3,7 @@
         <marquee
             onMouseOver="this.stop()"
             onMouseOut="this.start()"
-            class="w-full h-[40px] bg-black flex items-center justify-evenly py-[4px] px-[10px] sticky top-0 z-[100] uppercase font-montserrat font-bold"
+            class="w-full h-[40px] bg-black flex items-center gap-[30px] py-[4px] px-[10px] sticky top-0 z-[100] uppercase font-montserrat font-bold"
         >
             <a
                 href="#top"
@@ -133,6 +133,7 @@
                                     <span class="text-[#FFC64F]">22:00</span>
                                 </p>
                                 <button
+                                    @click="showModal(events[1])"
                                     :class="
                                         card[1] ? 'bg-white text-[#FFC64F]' : ''
                                     "
@@ -180,6 +181,7 @@
                                     <span class="text-[#FFC64F]">22:00</span>
                                 </p>
                                 <button
+                                    @click="showModal(events[3])"
                                     :class="
                                         card[2] ? 'bg-white text-[#FFC64F]' : ''
                                     "
@@ -227,6 +229,7 @@
                                     <span class="text-[#FFC64F]">22:00</span>
                                 </p>
                                 <button
+                                    @click="showModal(events[2])"
                                     :class="
                                         card[3] ? 'bg-white text-[#FFC64F]' : ''
                                     "
@@ -287,6 +290,7 @@
                                     <span class="text-[#FFC64F]">22:00</span>
                                 </p>
                                 <button
+                                    @click="showModal(events[0])"
                                     :class="
                                         card[4] ? 'bg-white text-[#FFC64F]' : ''
                                     "
@@ -335,6 +339,7 @@
                                     <span class="text-[#FFC64F]">22:00</span>
                                 </p>
                                 <button
+                                    @click="showModal(events[4])"
                                     :class="
                                         card[5] ? 'bg-white text-[#FFC64F]' : ''
                                     "
@@ -384,6 +389,7 @@
                                     <span class="text-[#FFC64F]">22:00</span>
                                 </p>
                                 <button
+                                    @click="showModal(events[5])"
                                     :class="
                                         card[6] ? 'bg-white text-[#FFC64F]' : ''
                                     "
@@ -404,6 +410,34 @@
                             </p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div
+            v-if="selectedEvent.open"
+            class="fixed h-screen inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+        >
+            <div class="bg-white p-8 max-w-4xl mx-auto rounded-md shadow-md">
+                <h2 class="text-lg font-bold">{{ selectedEvent.name }}</h2>
+                <img
+                    :src="selectedEvent.image"
+                    class="w-auto h-[200px] rounded-md mb-4"
+                    alt="Изображение мероприятия"
+                />
+                <p class="text-gray-500">
+                    Дата: {{ selectedEvent.date }}, Цена:
+                    {{ selectedEvent.price }}
+                </p>
+                <p class="text-gray-700">{{ selectedEvent.description }}</p>
+                <p class="text-gray-700">{{ selectedEvent.location }}</p>
+                <div class="mt-4">
+                    <p class="text-gray-700">{{ selectedEvent.content }}</p>
+                    <button
+                        @click="closeModal"
+                        class="bg-[#375A44]/70 text-white px-4 py-2 rounded-md mt-4 hover:bg-[#375A44]"
+                    >
+                        Закрыть
+                    </button>
                 </div>
             </div>
         </div>
@@ -606,6 +640,90 @@ export default defineComponent({
         return {
             FreeMode: false,
             card: [false, false, false, false, false, false],
+            selectedEvent: {
+                name: null,
+                date: null,
+                price: null,
+                location: null,
+                description: null,
+                image: "", // путь к изображению мероприятия
+                content: null,
+                open: false,
+            },
+            events: [
+                {
+                    name: "Чемпионат мира по футболу",
+                    date: "25.06.2024",
+                    price: "1500 руб.",
+                    location: 'Стадион "Лужники", Москва, Россия',
+                    description:
+                        "Самое престижное событие в мире футбола, собирающее лучшие команды со всего мира!",
+                    image: "https://i.pinimg.com/564x/2f/07/f5/2f07f5d7e5f6f3885bc4ba9e8522b31e.jpg", // путь к изображению мероприятия
+                    content:
+                        "Чемпионат мира по футболу - это главное событие в мире футбола, объединяющее лучшие команды из разных стран. Зрители могут насладиться увлекательными матчами и испытать атмосферу настоящего спортивного праздника.",
+                },
+
+                {
+                    name: "Формула 1 Гран При",
+                    date: "20.09.2024",
+                    price: "1200 руб.",
+                    location:
+                        'Гоночная трасса "Спа-Франкоршамп", Брюссель, Бельгия',
+                    description:
+                        "Эмоциональные гонки, привлекающие миллионы зрителей со всего мира!",
+                    image: "https://s0.rbk.ru/v6_top_pics/media/img/6/76/756629051199766.jpg", // путь к изображению мероприятия
+                    content:
+                        "Гран-при Формулы-1 - это одно из самых престижных автоспортивных соревнований в мире. Здесь собираются лучшие гонщики и команды, чтобы сразиться за звание победителя в самых динамичных и захватывающих гонках на планете.",
+                },
+                {
+                    name: "Марафон на 42 км",
+                    date: "15.09.2024",
+                    price: "2000 руб.",
+                    location: "Центральный парк, Нью-Йорк, США",
+                    description:
+                        "Увлекательное соревнование, где участники преодолевают дистанцию в 42 километра, испытывая свою выносливость и духовную силу.",
+                    image: "https://marathonec.ru/wp-content/uploads/2019/03/marafon-skolko-km-4.jpg",
+                    content:
+                        "Марафон на 42 км - это одно из самых престижных и зрелищных спортивных мероприятий, где участники показывают свои спортивные навыки и выносливость, преодолевая длинную дистанцию через городские улицы и парки.",
+                },
+                {
+                    name: "Битва танцев",
+                    date: "10.08.2024",
+                    price: "1200 руб.",
+                    location:
+                        "Зал танцевальной студии 'Rhythm', Лондон, Великобритания",
+                    description:
+                        "Энергичное и захватывающее соревнование среди танцоров различных стилей, где каждый может продемонстрировать свой талант и стиль.",
+                    image: "https://project-nsk.ru/sait/l4hY0yn2NrU-2.jpg",
+                    content:
+                        "Битва танцев - это уникальное мероприятие, где танцоры со всего мира собираются, чтобы соревноваться в различных стилях танцев. Зрители могут насладиться выступлениями профессиональных танцоров и открыть для себя новые танцевальные техники и направления.",
+                },
+                {
+                    name: "Чемпионат мира по киберспорту",
+                    date: "05.11.2024",
+                    price: "1000 руб.",
+                    location:
+                        "Олимпийский комплекс 'Seoul eSports Stadium', Сеул, Южная Корея",
+                    description:
+                        "Грандиозное мероприятие, где лучшие киберспортивные команды сражаются за звание чемпионов мира в различных дисциплинах киберспорта.",
+                    image: "https://i.vgy.me/HAwnI1.jpg",
+                    content:
+                        "Чемпионат мира по киберспорту - это высокотехнологичное мероприятие, где киберспортсмены демонстрируют свои профессиональные навыки в играх различных жанров, таких как MOBA, стратегии, шутеры и другие. Зрители могут насладиться увлекательными матчами и эмоциональными баталиями между командами.",
+                },
+                {
+                    name: "Just Dance",
+                    date: "20.07.2024",
+                    price: "800 руб.",
+                    location: "Танцпол 'Groove', Париж, Франция",
+                    description:
+                        "Феерическое мероприятие, где участники танцуют под горячие ритмы и музыку, соревнуясь в мастерстве и выразительности.",
+                    image: "https://assets.teenvogue.com/photos/5b02353d26c6e63ca7f4eb8e/16:9/w_2560%2Cc_limit/GettyImages-960688614.jpg",
+                    content:
+                        "Just Dance - это веселое и динамичное мероприятие, где участники соревнуются в танцевальном мастерстве под популярные музыкальные композиции. Здесь каждый может проявить свой танцевальный талант и получить заряд позитивных эмоций и энергии.",
+                },
+
+                // Добавьте здесь свои мероприятия
+            ],
             tickers: [
                 {
                     id: 1,
@@ -717,6 +835,13 @@ export default defineComponent({
         },
         visibleInf(el: number) {
             this.card[el] = !this.card[el];
+        },
+        showModal(event: any) {
+            this.selectedEvent = event;
+            this.selectedEvent.open = true;
+        },
+        closeModal() {
+            this.selectedEvent.open = false;
         },
     },
 });

@@ -237,7 +237,7 @@ export default {
                 price: null,
                 location: null,
                 description: null,
-                image: null, // путь к изображению мероприятия
+                image: "", // путь к изображению мероприятия
                 content: null,
                 open: false,
             },
