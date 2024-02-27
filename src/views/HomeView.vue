@@ -135,7 +135,7 @@
                                 <button
                                     @click="btnAct(1)"
                                     :class="
-                                        btn === '1'
+                                        btn == '1'
                                             ? 'bg-white text-[#FFC64F]'
                                             : ''
                                     "
@@ -185,7 +185,7 @@
                                 <button
                                     @click="btnAct(2)"
                                     :class="
-                                        btn === '2'
+                                        btn == '2'
                                             ? 'bg-white text-[#FFC64F]'
                                             : ''
                                     "
@@ -235,7 +235,7 @@
                                 <button
                                     @click="btnAct(3)"
                                     :class="
-                                        btn === '3'
+                                        btn == '3'
                                             ? 'bg-white text-[#FFC64F]'
                                             : ''
                                     "
@@ -298,7 +298,7 @@
                                 <button
                                     @click="btnAct(4)"
                                     :class="
-                                        btn === '4'
+                                        btn == '4'
                                             ? 'bg-white text-[#FFC64F]'
                                             : ''
                                     "
@@ -349,7 +349,7 @@
                                 <button
                                     @click="btnAct(5)"
                                     :class="
-                                        btn === '5'
+                                        btn == '5'
                                             ? 'bg-white text-[#FFC64F]'
                                             : ''
                                     "
@@ -401,7 +401,7 @@
                                 <button
                                     @click="btnAct(6)"
                                     :class="
-                                        btn === '6'
+                                        btn == '6'
                                             ? 'bg-white text-[#FFC64F]'
                                             : ''
                                     "
