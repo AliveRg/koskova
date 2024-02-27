@@ -136,7 +136,7 @@
                                         btn[1] ? 'bg-white text-[#FFC64F]' : ''
                                     "
                                     type="button"
-                                    class="font-montserrat font-bold text-5xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
+                                    class="font-montserrat font-bold text-5xl px-[20px] py-[15px] border-[1px] border-white border-solid md:hover:text-[#FFC64F] md:hover:bg-white"
                                 >
                                     Подробнее
                                 </button>
@@ -184,7 +184,7 @@
                                         btn[2] ? 'bg-white text-[#FFC64F]' : ''
                                     "
                                     type="button"
-                                    class="font-montserrat font-bold text-5xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
+                                    class="font-montserrat font-bold text-5xl px-[20px] py-[15px] border-[1px] border-white border-solid md:hover:text-[#FFC64F] md:hover:bg-white"
                                 >
                                     Подробнее
                                 </button>
@@ -232,7 +232,7 @@
                                         btn[3] ? 'bg-white text-[#FFC64F]' : ''
                                     "
                                     type="button"
-                                    class="font-montserrat font-bold text-5xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
+                                    class="font-montserrat font-bold text-5xl px-[20px] py-[15px] border-[1px] border-white border-solid md:hover:text-[#FFC64F] md:hover:bg-white"
                                 >
                                     Подробнее
                                 </button>
@@ -293,7 +293,7 @@
                                         btn[4] ? 'bg-white text-[#FFC64F]' : ''
                                     "
                                     type="button"
-                                    class="font-montserrat font-bold text-xl md:text-2xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
+                                    class="font-montserrat font-bold text-xl md:text-2xl px-[20px] py-[15px] border-[1px] border-white border-solid md:hover:text-[#FFC64F] md:hover:bg-white"
                                 >
                                     Подробнее
                                 </button>
@@ -342,7 +342,7 @@
                                         btn[5] ? 'bg-white text-[#FFC64F]' : ''
                                     "
                                     type="button"
-                                    class="font-montserrat font-bold text-xl md:text-2xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
+                                    class="font-montserrat font-bold text-xl md:text-2xl px-[20px] py-[15px] border-[1px] border-white border-solid md:hover:text-[#FFC64F] md:hover:bg-white"
                                 >
                                     Подробнее
                                 </button>
@@ -392,7 +392,7 @@
                                         btn[6] ? 'bg-white text-[#FFC64F]' : ''
                                     "
                                     type="button"
-                                    class="font-montserrat font-bold text-xl md:text-2xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
+                                    class="font-montserrat font-bold text-xl md:text-2xl px-[20px] py-[15px] border-[1px] border-white border-solid md:hover:text-[#FFC64F] md:hover:bg-white"
                                 >
                                     Подробнее
                                 </button>
