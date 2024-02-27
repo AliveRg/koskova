@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import moment from "moment";
 import emailjs from "@emailjs/browser";
 </script>
@@ -83,7 +84,7 @@ import emailjs from "@emailjs/browser";
                 </div>
             </div>
             <div
-                v-if="selectedEvent"
+                v-if="selectedEvent.open"
                 class="fixed h-screen inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
             >
                 <div
@@ -114,7 +115,7 @@ import emailjs from "@emailjs/browser";
             </div>
         </div>
         <div
-            v-if="selectedEventI"
+            v-if="selectedEventI.open"
             class="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none bg-black bg-opacity-50"
         >
             <form
@@ -122,7 +123,9 @@ import emailjs from "@emailjs/browser";
                 @submit.prevent="sendEmail"
                 class="bg-white h-[80dvh] overflow-y-scroll p-8 max-w-4xl mx-auto rounded-md shadow-md"
             >
-                <h2 class="text-lg font-bold">{{ selectedEventI.name }}</h2>
+                <h2 class="text-lg font-bold">
+                    {{ selectedEventI.name }}
+                </h2>
                 <p class="text-gray-500">
                     Дата: {{ selectedEventI.date }}, Цена:
                     {{ selectedEventI.price }}
@@ -228,8 +231,26 @@ export default {
     },
     data() {
         return {
-            selectedEvent: null,
-            selectedEventI: null,
+            selectedEvent: {
+                name: null,
+                date: null,
+                price: null,
+                location: null,
+                description: null,
+                image: null, // путь к изображению мероприятия
+                content: null,
+                open: false,
+            },
+            selectedEventI: {
+                name: null,
+                date: null,
+                price: null,
+                location: null,
+                description: null,
+                image: null, // путь к изображению мероприятия
+                content: null,
+                open: false,
+            },
             events: [
                 {
                     name: "Чемпионат мира по футболу",
@@ -407,22 +428,24 @@ export default {
         },
         showModal(event: any) {
             this.selectedEvent = event;
+            this.selectedEvent.open = true;
         },
         showModalI(event: any) {
             this.selectedEventI = event;
+            this.selectedEventI.open = true;
         },
         closeModal() {
-            this.selectedEvent = null;
+            this.selectedEvent.open = false;
         },
         closeModalI() {
-            this.selectedEventI = null;
+            this.selectedEventI.open = false;
         },
         sendEmail() {
             emailjs
                 .sendForm(
                     "service_mw0zaxj",
                     "template_hgkm6tv",
-                    this.$refs.form,
+                    this.$refs.form as HTMLFormElement,
                     {
                         publicKey: "mqXy-a2b0qm0vr3oN",
                     }
@@ -430,9 +453,9 @@ export default {
                 .then(
                     () => {
                         console.log("SUCCESS!");
-                        this.selectedEventI = null;
+                        this.selectedEventI.open = false;
                     },
-                    (error) => {
+                    (error: any) => {
                         console.log("FAILED...", error.text);
                     }
                 );
