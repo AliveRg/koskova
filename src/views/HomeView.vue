@@ -1,6 +1,8 @@
 <template>
     <div>
-        <!-- <div
+        <marquee
+            onMouseOver="this.stop()"
+            onMouseOut="this.start()"
             class="w-full h-[40px] bg-black flex items-center justify-evenly py-[4px] px-[10px] sticky top-0 z-[100] uppercase font-montserrat font-bold"
         >
             <a
@@ -33,7 +35,7 @@
             >
                 купить билет
             </a>
-        </div> -->
+        </marquee>
         <!-- <swiper
                 :modules="modules"
                 :direction="'vertical'"
