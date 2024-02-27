@@ -36,27 +36,7 @@
                 купить билет
             </a>
         </marquee>
-        <!-- <swiper
-                :modules="modules"
-                :direction="'vertical'"
-                :slides-per-view="'auto'"
-                :space-between="0"
-                :freeMode="FreeMode"
-                :speed="1000"
-                :mousewheel="true"
-                :autoHeight="true"
-                :pagination="{
-                    clickable: true,
-                }"
-                @swiper="onSwiper"
-                @slideChange="onSlideChange"
-            >
-                <swiper-slide> </swiper-slide>
 
-                <swiper-slide>
-                    <div class="bg-[#FFC64F] h-screen w-screen"></div>
-                </swiper-slide>
-            </swiper> -->
         <div
             class="bg-[#009E5C] h-screen w-screen relative flex flex-col items-center justify-center gap-[80px] z-10"
             id="buy"

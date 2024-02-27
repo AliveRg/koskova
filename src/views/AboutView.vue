@@ -113,6 +113,41 @@ import emailjs from "@emailjs/browser";
                     </div>
                 </div>
             </div>
+            <div
+                v-if="showPopup"
+                class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+                @click="closePopup"
+            >
+                <div
+                    class="bg-white rounded-lg p-8 max-w-sm w-full relative"
+                    @click.stop
+                >
+                    <button
+                        @click="closePopup"
+                        class="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
+                    >
+                        &times;
+                    </button>
+                    <div class="flex items-center justify-center">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-12 w-12 text-green-500"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M10 0c5.523 0 10 4.477 10 10s-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0zm4.354 7.646a.5.5 0 01.646.764l-7 8a.5.5 0 01-.76.004l-4-4a.5.5 0 01.652-.756l3.328 3.329 6.299-7.155a.5.5 0 01.763.004z"
+                                clip-rule="evenodd"
+                            />
+                        </svg>
+                        <h2 class="text-xl font-bold ml-4">Заявка принята!</h2>
+                    </div>
+                    <p class="text-gray-700 mt-4">
+                        Вам скоро перезвонит оператор для подтверждения покупки.
+                    </p>
+                </div>
+            </div>
         </div>
         <div
             v-if="selectedEventI.open"
@@ -151,6 +186,7 @@ import emailjs from "@emailjs/browser";
                                     >Имя:</label
                                 >
                                 <input
+                                    required
                                     v-model="formData.name"
                                     type="text"
                                     id="name"
@@ -165,6 +201,7 @@ import emailjs from "@emailjs/browser";
                                     >Фамилия:</label
                                 >
                                 <input
+                                    required
                                     type="text"
                                     id="surname"
                                     name="user_surname"
@@ -179,6 +216,7 @@ import emailjs from "@emailjs/browser";
                                     >Отчество:</label
                                 >
                                 <input
+                                    required
                                     type="text"
                                     id="patronymic"
                                     name="user_patronymic"
@@ -195,6 +233,7 @@ import emailjs from "@emailjs/browser";
                                 <input
                                     type="text"
                                     id="phone"
+                                    required
                                     name="user_phone"
                                     v-model="formData.phone"
                                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
@@ -231,6 +270,7 @@ export default {
     },
     data() {
         return {
+            showPopup: false,
             selectedEvent: {
                 name: null,
                 date: null,
@@ -440,6 +480,9 @@ export default {
         closeModalI() {
             this.selectedEventI.open = false;
         },
+        closePopup() {
+            this.showPopup = false;
+        },
         sendEmail() {
             emailjs
                 .sendForm(
@@ -454,9 +497,11 @@ export default {
                     () => {
                         console.log("SUCCESS!");
                         this.selectedEventI.open = false;
+                        this.showPopup = true;
                     },
                     (error: any) => {
                         console.log("FAILED...", error.text);
+                        this.selectedEventI.open = false;
                     }
                 );
         },
