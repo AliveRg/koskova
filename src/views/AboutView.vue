@@ -117,7 +117,9 @@ import emailjs from "@emailjs/browser";
             v-if="selectedEventI"
             class="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none bg-black bg-opacity-50"
         >
-            <div
+            <form
+                ref="form"
+                @submit.prevent="sendEmail"
                 class="bg-white h-[80dvh] overflow-y-scroll p-8 max-w-4xl mx-auto rounded-md shadow-md"
             >
                 <h2 class="text-lg font-bold">{{ selectedEventI.name }}</h2>
@@ -141,7 +143,7 @@ import emailjs from "@emailjs/browser";
                         <div class="relative p-6 flex-auto">
                             <div class="mb-4">
                                 <label
-                                    for="name"
+                                    for="user_name"
                                     class="block text-sm font-medium text-gray-700"
                                     >Имя:</label
                                 >
@@ -149,48 +151,48 @@ import emailjs from "@emailjs/browser";
                                     v-model="formData.name"
                                     type="text"
                                     id="name"
-                                    name="name"
+                                    name="user_name"
                                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                 />
                             </div>
                             <div class="mb-4">
                                 <label
-                                    for="surname"
+                                    for="user_surname"
                                     class="block text-sm font-medium text-gray-700"
                                     >Фамилия:</label
                                 >
                                 <input
                                     type="text"
                                     id="surname"
-                                    name="surname"
+                                    name="user_surname"
                                     v-model="formData.surname"
                                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                 />
                             </div>
                             <div class="mb-4">
                                 <label
-                                    for="patronymic"
+                                    for="user_patronymic"
                                     class="block text-sm font-medium text-gray-700"
                                     >Отчество:</label
                                 >
                                 <input
                                     type="text"
                                     id="patronymic"
-                                    name="patronymic"
+                                    name="user_patronymic"
                                     v-model="formData.patronymic"
                                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                 />
                             </div>
                             <div class="mb-4">
                                 <label
-                                    for="phone"
+                                    for="user_phone"
                                     class="block text-sm font-medium text-gray-700"
                                     >Телефон:</label
                                 >
                                 <input
                                     type="text"
                                     id="phone"
-                                    name="phone"
+                                    name="user_phone"
                                     v-model="formData.phone"
                                     class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                 />
@@ -200,6 +202,8 @@ import emailjs from "@emailjs/browser";
                     <!-- Добавьте другие поля для ввода информации о покупателе, если необходимо -->
                     <!-- Кнопка для завершения покупки -->
                     <button
+                        type="submit"
+                        value="Send"
                         @click="buyTicket"
                         class="bg-green-500 text-white px-4 py-2 rounded-md mt-4 hover:bg-green-600"
                     >
@@ -212,17 +216,8 @@ import emailjs from "@emailjs/browser";
                         Отмена
                     </button>
                 </div>
-            </div>
+            </form>
         </div>
-        <form ref="form" @submit.prevent="sendEmail">
-            <label>Name</label>
-            <input type="text" name="user_name" />
-            <label>Email</label>
-            <input type="email" name="user_email" />
-            <label>Message</label>
-            <textarea name="message"></textarea>
-            <input type="submit" value="Send" />
-        </form>
     </div>
 </template>
 
@@ -409,7 +404,6 @@ export default {
             console.log("Покупка билета", this.selectedEventI, this.formData);
 
             // Закрыть модальное окно после завершения покупки
-            this.selectedEventI = null;
         },
         showModal(event: any) {
             this.selectedEvent = event;
@@ -436,6 +430,7 @@ export default {
                 .then(
                     () => {
                         console.log("SUCCESS!");
+                        this.selectedEventI = null;
                     },
                     (error) => {
                         console.log("FAILED...", error.text);

@@ -135,7 +135,9 @@
                                 <button
                                     @click="btnAct(1)"
                                     :class="
-                                        btn[1] ? 'bg-white text-[#FFC64F]' : ''
+                                        btn === '1'
+                                            ? 'bg-white text-[#FFC64F]'
+                                            : ''
                                     "
                                     type="button"
                                     class="font-montserrat font-bold text-5xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
@@ -183,7 +185,9 @@
                                 <button
                                     @click="btnAct(2)"
                                     :class="
-                                        btn[2] ? 'bg-white text-[#FFC64F]' : ''
+                                        btn === '2'
+                                            ? 'bg-white text-[#FFC64F]'
+                                            : ''
                                     "
                                     type="button"
                                     class="font-montserrat font-bold text-5xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
@@ -231,7 +235,9 @@
                                 <button
                                     @click="btnAct(3)"
                                     :class="
-                                        btn[3] ? 'bg-white text-[#FFC64F]' : ''
+                                        btn === '3'
+                                            ? 'bg-white text-[#FFC64F]'
+                                            : ''
                                     "
                                     type="button"
                                     class="font-montserrat font-bold text-5xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
@@ -292,7 +298,9 @@
                                 <button
                                     @click="btnAct(4)"
                                     :class="
-                                        btn[4] ? 'bg-white text-[#FFC64F]' : ''
+                                        btn === '4'
+                                            ? 'bg-white text-[#FFC64F]'
+                                            : ''
                                     "
                                     type="button"
                                     class="font-montserrat font-bold text-xl md:text-2xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
@@ -341,7 +349,9 @@
                                 <button
                                     @click="btnAct(5)"
                                     :class="
-                                        btn[5] ? 'bg-white text-[#FFC64F]' : ''
+                                        btn === '5'
+                                            ? 'bg-white text-[#FFC64F]'
+                                            : ''
                                     "
                                     type="button"
                                     class="font-montserrat font-bold text-xl md:text-2xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
@@ -391,7 +401,9 @@
                                 <button
                                     @click="btnAct(6)"
                                     :class="
-                                        btn[6] ? 'bg-white text-[#FFC64F]' : ''
+                                        btn === '6'
+                                            ? 'bg-white text-[#FFC64F]'
+                                            : ''
                                     "
                                     type="button"
                                     class="font-montserrat font-bold text-xl md:text-2xl px-[20px] py-[15px] border-[1px] border-white border-solid active:bg-white active:text-[#FFC64F] md:hover:text-[#FFC64F] md:hover:bg-white"
@@ -612,7 +624,7 @@ export default defineComponent({
         return {
             FreeMode: false,
             card: [false, false, false, false, false, false],
-            btn: [false, false, false, false, false, false],
+            btn: "",
             tickers: [
                 {
                     id: 1,
@@ -726,7 +738,7 @@ export default defineComponent({
             this.card[el] = !this.card[el];
         },
         btnAct(el: number) {
-            this.btn[el] = !this.btn[el];
+            this.btn = this.btn[el];
         },
     },
 });
